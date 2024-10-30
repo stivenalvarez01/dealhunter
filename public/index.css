@@ -229,3 +229,41 @@ body {
   opacity: 0.5;
 }
 
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  grid-template-rows: auto auto; /* Dos filas */
+}
+
+.large-image {
+  grid-column: 2 / 3; /* Ocupa toda la segunda columna */
+  grid-row: 1 / 3;    /* Ocupa ambas filas en esta columna */
+  height: 600px;
+
+}
+
+.medium-image {
+  grid-column: 1 / 2; /* Primera columna */
+  grid-row: 1 / 2;    /* Primera fila */
+  height: 328px;
+}
+
+.small-image {
+  grid-column: 1 / 2; /* Primera columna */
+  grid-row: 2 / 3;    /* Segunda fila */
+  height: 272px;
+
+}
+
+.small-images-container {
+  display: flex;
+  grid-template-columns: 1fr 1fr; /* Dos columnas para las imágenes pequeñas */
+  grid-column: 1 / 2; /* Primera columna */
+  grid-row: 2 / 3;    /* Segunda fila */
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
