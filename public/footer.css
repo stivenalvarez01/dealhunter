@@ -1,0 +1,119 @@
+.footer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #031240;
+    padding: 72px 55px 64px;
+}
+
+.footer-brand {
+    width: 290px;
+    position: relative;
+}
+
+.footer-logo {
+    width: 70px;
+    height: 72px;
+}
+
+.footer-title {
+    color: #EBF227;
+    font-size: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 7.20px;
+    text-align: center;
+    margin-left: 102px;
+}
+
+.footer-section {
+    margin-bottom: 64px;
+}
+
+.footer-heading {
+    color: #EBF227;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #CFCFCF;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+/* Posicionamiento de las secciones */
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    height: 357px;
+}
+
+/* ... resto de estilos anteriores ... */
+
+.footer-brand-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Espacio entre el header y los iconos sociales */
+    width: 290px;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Espacio entre el logo y el título */
+}
+
+.footer-logo {
+    width: 70px;
+    height: 72px;
+}
+
+.footer-title {
+    color: #EBF227;
+    font-size: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 7.20px;
+    margin: 0; /* Eliminamos márgenes por defecto */
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer; /* Añade el cursor pointer al pasar por encima */
+    transition: opacity 0.3s; /* Efecto suave al hacer hover */
+}
+
+.social-icon:hover {
+    opacity: 0.8; /* Efecto de transparencia al pasar el mouse */
+}
+
+/* Si usas el método de imagen */
+.social-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Si quieres hacer los iconos clickeables */
+.social-icon a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
