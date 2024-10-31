@@ -229,6 +229,8 @@ body {
   opacity: 0.5;
 }
 
+/*hasta aqui llega el encabezado*/
+
 .image-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Dos columnas iguales */

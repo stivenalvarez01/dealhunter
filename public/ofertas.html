@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DealHunter - Comparación de Precios</title>
+    <link rel="stylesheet" href="./ofertas.css">
+</head>
+<body>
+
+    <!-- Encabezado o Header -->
+    <header class="header">
+
+        
+        <div class="navbar">
+            <div class="logo">
+                <!-- Logo de DealHunter -->
+                <img src="/source/logo.png" alt="DealHunter Logo">
+
+            </div>
+            
+            <div class="search-bar">
+                <div class="icon">
+                    <img src="/source/search-icon.png" alt="lupa busqueda">
+                    <!-- Ícono de lupa -->
+                </div>
+                <div class="placeholder-text">Search</div>
+            </div>
+            
+            <div class="nav-links">
+                <div class="link">Home</div>
+                <div class="link inactive">Ofertas</div>
+                <div class="link inactive">Contáctanos</div>
+                <div class="link inactive">Aliados</div>
+            </div>
+            
+            <div class="icons">
+                <div class="icon heart-icon">
+                    <img src="/source/corazon.png" alt="favoritos">
+                </div>
+                <div class="icon user-icon">
+                    <img src="/source/persona.png" alt="persona login">
+                </div>
+            </div>
+        </div>
+        
+        
+    </header>
+    <div class="options-bar">
+        <div class="option-item">
+            <img src="/source/phone-icon.png" alt="favoritos">
+            <div class="icon smartphone-icon"></div>
+            <div class="option-text">Smartphone</div>
+        </div>
+        <div class="divider"></div>
+        <div class="option-item">
+            <img src="/source/phone-icon.png" alt="favoritos">
+            <div class="icon laptop-icon"></div>
+            <div class="option-text">Laptops</div>
+        </div>
+        <div class="divider"></div>
+        <div class="option-item">
+            <img src="/source/controller-icon.png" alt="favoritos">
+            <div class="icon tablet-icon"></div>
+            <div class="option-text">Tablets</div>
+        </div>
+        <div class="divider"></div>
+        <div class="option-item">
+            <img src="/source/controller-icon.png" alt="favoritos">
+            <div class="icon component-icon"></div>
+            <div class="option-text">Componentes</div>
+        </div>
+        <div class="divider"></div>
+        <div class="option-item">
+            <img src="/source/controller-icon.png" alt="favoritos">
+            <div class="icon peripheral-icon"></div>
+            <div class="option-text">Periféricos</div>
+        </div>
+        <div class="divider"></div>
+        <div class="option-item">
+            <img src="/source/controller-icon.png" alt="favoritos">
+            <div class="icon other-icon"></div>
+            <div class="option-text">Otros</div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a href="#">Home</a> &gt; <span>Ofertas</span>
+    </div>
+
+
+    <div class="slider-container">
+        <div class="slider">
+            <h2>Oferta del Mes</h2>
+            <div class="slider-content">
+                <div class="slide">
+                    <img src="/source/audifonos.png" alt="Producto 1">
+                    <div class="info">
+                        <h3>Nombre del Producto 1</h3>
+                        <p>Descuento: 20%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/source/tablet.png" alt="Producto 3">
+                    <div class="info">
+                        <h3>Nombre del Producto 3</h3>
+                        <p>Descuento: 10%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/source/airpods.png" alt="Producto 4">
+                    <div class="info">
+                        <h3>Nombre del Producto 4</h3>
+                        <p>Descuento: 25%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1, 0)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1, 0)">&#10095;</button>
+        </div>
+    
+        <div class="slider">
+            <h2>Oferta del Día</h2>
+            <div class="slider-content">
+                <div class="slide">
+                    <img src="/source/tablet.png" alt="Producto A">
+                    <div class="info">
+                        <h3>Nombre del Producto A</h3>
+                        <p>Descuento: 30%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/source/airpods.png" alt="Producto B">
+                    <div class="info">
+                        <h3>Nombre del Producto B</h3>
+                        <p>Descuento: 5%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/source/audifonos.png" alt="Producto C">
+                    <div class="info">
+                        <h3>Nombre del Producto C</h3>
+                        <p>Descuento: 18%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1, 1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1, 1)">&#10095;</button>
+        </div>
+    
+        <div class="slider">
+            <h2>Oferta Especial</h2>
+            <div class="slider-content">
+                <div class="slide">
+                    <img src="/source/airpods.png" alt="Producto X">
+                    <div class="info">
+                        <h3>Nombre del Producto X</h3>
+                        <p>Descuento: 22%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/source/audifonos.png" alt="Producto Y">
+                    <div class="info">
+                        <h3>Nombre del Producto Y</h3>
+                        <p>Descuento: 8%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/source/airpods.png" alt="Producto W">
+                    <div class="info">
+                        <h3>Nombre del Producto W</h3>
+                        <p>Descuento: 9%</p>
+                        <button class="ver-mas">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1, 2)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1, 2)">&#10095;</button>
+        </div>
+    </div>
+</body>
