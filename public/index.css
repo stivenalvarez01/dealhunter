@@ -496,7 +496,6 @@ body {
 }
 
 .title {
-  width: 425px;
   text-align: center;
   color: #031240;
   font-size: 40px;
@@ -579,4 +578,30 @@ body {
 .category-icon:hover {
   transform: scale(1.1);
   filter: brightness(1.5); /* Cambia el color al pasar el cursor */
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 20px;
+  text-align: center;
+  padding: 5rem;
+  height: 50rem;
+}
+
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partner img {
+  width: 15rem;
+  height: auto;
+}
+
+.partner p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }

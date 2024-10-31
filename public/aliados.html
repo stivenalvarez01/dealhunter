@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DealHunter - Comparación de Precios</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./aliados.css">
+    <link rel="stylesheet" href="./footer.css">
+
+
 </head>
+
 <body>
 
     <!-- Encabezado o Header -->
     <header class="header">
 
-        
+
         <div class="navbar">
             <div class="logo">
                 <!-- Logo de DealHunter -->
                 <img src="/source/logo.png" alt="DealHunter Logo">
 
             </div>
-            
+
             <div class="search-bar">
                 <div class="icon">
                     <img src="/source/search-icon.png" alt="lupa busqueda">
@@ -26,14 +32,14 @@
                 </div>
                 <div class="placeholder-text">Search</div>
             </div>
-            
+
             <div class="nav-links">
                 <div class="link">Home</div>
                 <div class="link inactive">Ofertas</div>
                 <div class="link inactive">Contáctanos</div>
                 <div class="link inactive">Aliados</div>
             </div>
-            
+
             <div class="icons">
                 <div class="icon heart-icon">
                     <img src="/source/corazon.png" alt="favoritos">
@@ -43,8 +49,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
     </header>
     <div class="options-bar">
         <div class="option-item">
@@ -83,38 +89,134 @@
             <div class="option-text">Otros</div>
         </div>
     </div>
-    <div class="breadcrumb">
-        <a href="#">Home</a> &gt; <span>Aliados</span>
+
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <a href="#">Home</a>
+            <span class="separator">&gt;</span>
+            <span>Aliados</span>
+        </div>
     </div>
 
-    <h1 class="title">Aliados</h1>
 
-    <h1 class="title">Aliados</h1>
-    <div class="partners-grid">
+
+
+
+    <h1 class="title-aliados">Aliados</h1>
+
+    <div class="partners">
         <div class="partner">
-            <img src="/source/huawei.png" alt="Huawei Logo">
+            <img src="/source/huawei.png" alt="Huawei">
             <p>Huawei</p>
         </div>
         <div class="partner">
-            <img src="/source/mercado-libre.png" alt="Mercado Libre Logo">
+            <img src="/source/mercado-libre.png" alt="Mercado Libre">
             <p>Mercado Libre</p>
         </div>
         <div class="partner">
-            <img src="/source/alkosto.png" alt="Alkosto Logo">
+            <img src="/source/alkosto.png" alt="Alkosto">
             <p>Alkosto</p>
         </div>
         <div class="partner">
-            <img src="/source/falabella.png" alt="Falabella Logo">
+            <img src="/source/falabella.png" alt="Falabella">
             <p>Falabella</p>
         </div>
         <div class="partner">
-            <img src="/source/ishop.png" alt="Ishop Logo">
+            <img src="/source/ishop.png" alt="Ishop">
             <p>Ishop</p>
         </div>
         <div class="partner">
-            <img src="/source/olimpica.png" alt="Olimpica Logo">
+            <img src="/source/olimpica.png" alt="Olimpica">
             <p>Olimpica</p>
         </div>
     </div>
+
+
 </body>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <!-- Sección de marca -->
+    <div class="footer-brand-container">
+        <!-- Logo y nombre en línea -->
+        <div class="brand-header">
+            <img class="footer-logo" src="/source/logo-amarillo-footer.png" alt="DealHunter Logo" />
+            <h2 class="footer-title">DealHunter</h2>
+        </div>
+        <!-- Iconos sociales debajo -->
+        <div class="social-icons">
+            <!-- Facebook -->
+            <div class="social-icons">
+                <div class="social-icon">
+                    <a href="https://facebook.com/tu-pagina" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.589 7.15864C16.589 7.46567 16.589 8.4664 16.589 9.88811H21.4771L20.9471 14.2456H16.589C16.589 20.9656 16.589 29.9707 16.589 29.9707H10.8043C10.8043 29.9707 10.8043 21.0847 10.8043 14.2456H7.79004V9.88811H10.8043C10.8043 8.16007 10.8043 6.9313 10.8043 6.58917C10.8043 4.95909 10.6815 4.18565 11.3741 2.92249C12.0671 1.65938 14.0218 -0.0101862 17.4026 0.0300091C20.7842 0.0716692 22.2096 0.396982 22.2096 0.396982L21.4771 5.04095C21.4771 5.04095 19.3178 4.47077 18.2579 4.67397C17.1994 4.87724 16.589 5.52927 16.589 7.15864Z"
+                                fill="#EBF227" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Twitter -->
+            <div class="social-icon">
+                <a href="https://twitter.com/tu-usuario" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 5.35491C1.10231 5.84725 2.28913 6.18019 3.53407 6.32895C2.26272 5.56389 1.28721 4.35077 0.827618 2.90565C2.01797 3.61404 3.33333 4.12939 4.7385 4.40566C5.85842 3.20316 7.45906 2.45227 9.2305 2.45227C12.6272 2.45227 15.383 5.22385 15.383 8.64185C15.383 9.12709 15.3302 9.59818 15.2245 10.0516C20.3399 9.79299 24.8741 7.33132 27.9116 3.58215C28.4416 4.49952 28.7445 5.56389 28.7445 6.69731C28.7445 8.84374 27.658 10.7387 26.0063 11.8491C27.0136 11.819 27.9644 11.5374 28.7956 11.077V11.1531C28.7956 14.1531 26.6737 16.6555 23.8563 17.2222C24.3723 17.3675 24.9164 17.4401 25.4781 17.4401C25.8743 17.4401 26.2617 17.4029 26.6367 17.3303C25.8531 19.7884 23.5816 21.5789 20.8875 21.6267C22.9935 23.2879 25.6489 24.2778 28.5314 24.2778C29.028 24.2778 29.5193 24.2495 30 24.1928C27.2759 25.9461 24.0394 26.9715 20.5652 26.9715C9.24283 26.9715 3.05336 17.541 3.05336 9.36087C3.05336 9.09168 3.05865 8.82249 3.06921 8.55861C1.86653 7.68552 0.822329 6.59637 0 5.35491Z"
+                            fill="#EBF227" />
+                    </svg>
+                </a>
+            </div>
+            <!-- Instagram -->
+            <div class="social-icon">
+                <a href="https://instagram.com/tu-usuario" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15 27.5C12.3197 27.5 10.3909 27.4987 8.88712 27.3528C7.40057 27.2087 6.44962 26.9318 5.69072 26.4549C4.82334 25.91 4.0899 25.1766 3.54489 24.3093C3.06818 23.5504 2.7911 22.5994 2.64716 21.1129C2.50133 19.6091 2.5 17.6803 2.5 15C2.5 12.3197 2.50133 10.3909 2.64716 8.88712C2.7911 7.40057 3.06818 6.44962 3.54489 5.69072C4.08988 4.82332 4.82332 4.08988 5.69072 3.54489C6.44962 3.06818 7.40057 2.7911 8.88712 2.64716C10.3907 2.50133 12.3195 2.5 15 2.5C17.6803 2.5 19.6091 2.50133 21.1129 2.64716C22.5994 2.7911 23.5504 3.06818 24.3093 3.54489C25.1766 4.0899 25.91 4.82334 26.4549 5.69072C26.9318 6.44962 27.2087 7.40057 27.3528 8.88712C27.4987 10.3909 27.5 12.3197 27.5 15C27.5 17.6803 27.4987 19.6091 27.3528 21.1129C27.2087 22.5994 26.9318 23.5504 26.4549 24.3093C25.91 25.1766 25.1766 25.91 24.3093 26.4549C23.5504 26.9318 22.5994 27.2087 21.1129 27.3528C19.6091 27.4987 17.6803 27.5 15 27.5Z"
+                            fill="#EBF227" stroke="#EBF227" stroke-width="2" />
+                        <path
+                            d="M15 21.25C17.7614 21.25 20 19.0114 20 16.25C20 13.4886 17.7614 11.25 15 11.25C12.2386 11.25 10 13.4886 10 16.25C10 19.0114 12.2386 21.25 15 21.25Z"
+                            fill="#EBF227" stroke="#031240" stroke-width="2" />
+                        <path
+                            d="M21.0938 10.3125C21.8704 10.3125 22.5 9.6829 22.5 8.90625C22.5 8.1296 21.8704 7.5 21.0938 7.5C20.3171 7.5 19.6875 8.1296 19.6875 8.90625C19.6875 9.6829 20.3171 10.3125 21.0938 10.3125Z"
+                            fill="#031240" />
+                    </svg>
+                </a>
+            </div>
+            <!-- TikTok -->
+            <div class="social-icon">
+                <a href="https://tiktok.com/@tu-usuario" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.2813 6.29626C21.045 4.85896 20.3973 3.00196 20.4489 1.11136L15.8292 0.999756C15.8292 0.999756 15.8292 1.19686 15.8292 1.46266V19.988C15.8937 25.8488 6.63393 25.7066 7.36653 19.2284C7.81443 16.6526 10.5822 15.0674 13.0416 15.9635V11.2499C7.68723 10.3175 2.61303 14.5793 2.66643 20.0087C3.13443 31.7837 20.0232 31.7852 20.4918 20.0087C20.3739 19.5872 20.4399 11.7404 20.4231 11.0786C22.5237 12.3857 24.9678 13.0391 27.4431 12.9554V8.08726C25.1547 8.08726 23.4084 7.47886 22.2813 6.29626Z"
+                            fill="#EBF227" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <h3 class="footer-heading">Categorías</h3>
+        <ul class="footer-list">
+            <li>Smartphones</li>
+            <li>Laptops</li>
+            <li>Tablets</li>
+            <li>Componentes</li>
+            <li>Periféricos</li>
+            <li>Más Categorías</li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3 class="footer-heading">Pestañas</h3>
+        <ul class="footer-list">
+            <li>Home</li>
+            <li>Contáctanos</li>
+            <li>Ofertas</li>
+            <li>Aliados</li>
+        </ul>
+    </div>
+</footer>
+
 </html>
