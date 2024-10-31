@@ -267,3 +267,212 @@ body {
   height: 100%;
   object-fit: cover;
 }
+/* Layout principal */
+.grid-layout {
+  display: flex;
+  width: 100%;
+  margin: 0 auto; /* Centra el contenido */
+  height: 100vh;
+  max-height: 600px;
+}
+
+/* Columna izquierda */
+.left-column {
+  width: 50%; /* Ajuste a porcentaje en lugar de flex */
+  display: flex;
+  flex-direction: column;
+}
+
+.playstation-section {
+  height: 328px;
+  background: #B8C6D9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  overflow: hidden; /* Previene que las imágenes sobresalgan */
+}
+
+.playstation-section img {
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Sección productos pequeños */
+.small-products {
+  display: flex;
+  height: 272px;
+}
+
+.airpods-section, .vision-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  overflow: hidden;
+}
+
+.airpods-section {
+  background: #EBF227;
+}
+
+.vision-section {
+  background: #031859;
+}
+
+.airpods-section img {
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.vision-section img {
+  width: 40%;
+  height: 100%;
+  object-fit: fill;
+  transform: translateX(-50%);
+  transform: scaleX(-1);
+}
+
+/* Columna derecha - MacBook */
+.right-column {
+  width: 50%; /* Ajuste a porcentaje en lugar de flex */
+  background: #EBF227;
+  border-left: 2px solid black;
+  padding: 44px 5rem; /* Removido padding horizontal */
+  display: flex;
+  align-items: center;
+  position: relative; /* Para posicionamiento de elementos internos */
+  overflow: hidden; /* Importante para el efecto de recorte */
+}
+
+.macbook-content {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.macbook-image {
+  width: 150%;
+  height: 100%;
+}
+
+.macbook-image img {
+  width: 120%; /* Hace la imagen más grande que su contenedor */
+  height: auto;
+  object-fit: cover;
+  transform: translateX(-10%); /* Ajusta la posición horizontal de la imagen */
+}
+
+.macbook-image-container {
+  position: absolute;
+  right: -100px; /* Hace que la imagen sobresalga hacia la derecha */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70%; /* Ajusta según necesites */
+  overflow: hidden;
+}
+
+/* Estilos de texto */
+.product-info h2 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.right-column .product-info h2 {
+  font-size: 64px;
+  line-height: 56px;
+  font-weight: 250;
+}
+
+.right-column .product-info h2 span {
+  font-weight: 500;
+}
+
+.right-column .product-info {
+  width: 50%; /* Limita el ancho del texto */
+}
+
+.product-info p {
+  font-size: 32px;
+  color: #031240;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.vision-section .product-info {
+  color: #EBF227;
+}
+
+.vision-section .product-info p {
+  color: #909090;
+}
+
+/* Botón de oferta */
+.offer-button {
+  margin-top: 16px;
+  padding: 16px 56px;
+  background: #EBF227;
+  border: 1px solid #031240;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+  .macbook-image-container {
+      right: -50px;
+      width: 60%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid-layout {
+      flex-direction: column;
+      height: auto;
+      max-height: none;
+  }
+
+  .left-column, .right-column {
+      width: 100%;
+  }
+
+  .macbook-image-container {
+      position: relative;
+      right: 0;
+      width: 100%;
+      transform: none;
+      margin-top: 20px;
+  }
+
+  .macbook-content {
+      flex-direction: column;
+  }
+
+  .right-column .product-info {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .small-products {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .playstation-section, .airpods-section, .vision-section {
+      padding: 20px;
+  }
+
+  .product-info {
+      padding: 0 20px;
+  }
+}
