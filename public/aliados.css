@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.title {
+    text-align: center;
+    color: #031859;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Estilo de la cuadrícula */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-items: center;
+}
+
+.partner {
+    text-align: center;
+}
+
+.partner img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.partner p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #031859;
+}
