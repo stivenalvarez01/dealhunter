@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Asegúrate de importar Link
-import './Partners.css'; // Asegúrate de crear este archivo CSS si lo necesitas
+import './PartnersComponent.css'; // Asegúrate de crear este archivo CSS si lo necesitas
 
 const Partners = () => {
   return (
@@ -17,7 +17,7 @@ const Partners = () => {
 
       <div className="partners">
         <div className="partner">
-          <img src="/source/huawei.png" alt="Huawei" />
+          <img src="/images/huawei.png" alt="Huawei" />
           <p>Huawei</p>
         </div>
         <div className="partner">

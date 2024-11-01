@@ -24,7 +24,7 @@ const Header = () => {
                         <div className="placeholder-text">Search</div>
                     </div>
                     <div className="nav-links">
-                        <Link to="/">Home</Link>
+                        <li><Link to="/">Home</Link></li>
                         <span className="separator">&gt;</span>
                         <Link to="/ofertas" className="inactive">Ofertas</Link>
                         <span className="separator">&gt;</span>
