@@ -23,10 +23,10 @@ const Header = () => {
                         <span className="separator">&gt;</span>
                         <li><Link to="/ofertas">Ofertas</Link></li>
                         <span className="separator">&gt;</span>
-                        <Link to="/contacto" className="inactive">Contáctanos</Link>
+                        <li><Link to="/">Contactanos</Link></li>
                         <span className="separator">&gt;</span>
                         <li><Link to="/aliados">Aliados</Link></li>
-                        </div>
+                    </div>
                     <div className="icons">
                         <div className="icon heart-icon">
                             <img src='images/corazon.png' alt="favoritos" />
