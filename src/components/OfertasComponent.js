@@ -1,11 +1,11 @@
 import React from 'react';
-import './Ofertas.css';
+import styles from'../styles/OfertasComponent.module.css';
 import earbudsImage from './path/to/earbuds-image.jpg';
 import tabletImage from './path/to/tablet-image.jpg';
 
 const Ofertas = () => {
   return (
-    <div className="ofertas-container">
+    <div className={styles.ofertasContainer}>
       <h2 className="ofertas-title">Ofertas</h2>
       <h3 className="ofertas-subtitle">Grandes Ofertas Del Mes</h3>
       <div className="ofertas-items">
