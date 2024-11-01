@@ -1,34 +1,33 @@
 import React from 'react';
 import styles from'../styles/OfertasComponent.module.css';
-import earbudsImage from './path/to/earbuds-image.jpg';
-import tabletImage from './path/to/tablet-image.jpg';
+
 
 const Ofertas = () => {
   return (
     <div className={styles.ofertasContainer}>
-      <h2 className="ofertas-title">Ofertas</h2>
-      <h3 className="ofertas-subtitle">Grandes Ofertas Del Mes</h3>
-      <div className="ofertas-items">
-        <div className="oferta-item">
-          <img src="image/" alt="Kit de Huawei" className="oferta-image" />
+      <h2 className={styles.ofertasTitle}>Ofertas</h2>
+      <h3 className={styles.ofertasSubtitle}>Grandes Ofertas Del Mes</h3>
+      <div className={styles.ofertasItems}>
+        <div className={styles.ofertaitem}>
+          <img src="images/airpods.png" alt="Kit de Huawei" className={styles.ofertaImage} />
           <h4>Kit de Huawei</h4>
-          <p className="oferta-discount">20% OFF</p>
-          <button className="oferta-button">Ver Oferta</button>
+          <p className={styles.ofertaDiscount}>20% OFF</p>
+          <button className={styles.ofertaButton}>Ver Oferta</button>
         </div>
-        <div className="oferta-item">
-          <img src={tabletImage} alt="Kit de Huawei" className="oferta-image" />
+        <div className={styles.ofertaItem}>
+          <img src="images/tablet.png" alt="Kit de Huawei" className={styles.ofertaImage} />
           <h4>Kit de Huawei</h4>
-          <p className="oferta-discount">20% OFF</p>
-          <button className="oferta-button">Ver Oferta</button>
+          <p className={styles.ofertaDiscount}>20% OFF</p>
+          <button className={styles.ofertaButton}>Ver Oferta</button>
         </div>
       </div>
-      <div className="pagination">
-        <button className="page-btn">{"<"}</button>
-        <button className="page-btn active">1</button>
-        <button className="page-btn">2</button>
-        <span className="page-dots">...</span>
-        <button className="page-btn">12</button>
-        <button className="page-btn">{">"}</button>
+      <div className={styles.pagination}>
+        <button className={styles.pageBtn}>{"<"}</button>
+        <button className={styles.pagebtn.active}>1</button>
+        <button className={styles.pageBtn}>2</button>
+        <span className={styles.pageDots}>...</span>
+        <button className={styles.pageBtn}>12</button>
+        <button className={styles.pageBtn}>{">"}</button>
       </div>
     </div>
   );
