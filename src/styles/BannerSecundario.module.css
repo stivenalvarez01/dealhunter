@@ -1,0 +1,195 @@
+.imageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas */
+  }
+  
+  .largeImage {
+    grid-column: 2 / 3; /* Ocupa toda la segunda columna */
+    grid-row: 1 / 3;    /* Ocupa ambas filas en esta columna */
+    height: 600px;
+  
+  }
+  
+  .mediumImage {
+    grid-column: 1 / 2; /* Primera columna */
+    grid-row: 1 / 2;    /* Primera fila */
+    height: 328px;
+  }
+  
+  .smallImage {
+    grid-column: 1 / 2; /* Primera columna */
+    grid-row: 2 / 3;    /* Segunda fila */
+    height: 272px;
+  
+  }
+  
+  .smallImagesContainer {
+    display: flex;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para las imágenes pequeñas */
+    grid-column: 1 / 2; /* Primera columna */
+    grid-row: 2 / 3;    /* Segunda fila */
+  }
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Layout principal */
+  .gridLayout {
+    display: flex;
+    width: 100%;
+    margin: 0 auto; /* Centra el contenido */
+    height: 100vh;
+    max-height: 600px;
+  }
+  
+  /* Columna izquierda */
+  .leftColumn {
+    width: 50%; /* Ajuste a porcentaje en lugar de flex */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .playstationSection {
+    height: 328px;
+    background: #B8C6D9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    overflow: hidden; /* Previene que las imágenes sobresalgan */
+  }
+  
+  .playstationSection img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Sección productos pequeños */
+  .smallProducts {
+    display: flex;
+    height: 272px;
+  }
+  
+  .airpodsSection, .visionSection {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    overflow: hidden;
+  }
+  
+  .airpodsSection {
+    background: #EBF227;
+  }
+  
+  .visionSection {
+    background: #031859;
+  }
+  
+  .airpodsSection img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  
+  .visionSection img {
+    width: 40%;
+    height: 100%;
+    object-fit: fill;
+    transform: translateX(-50%);
+    transform: scaleX(-1);
+  }
+  
+  /* Columna derecha - MacBook */
+  .rightColumn {
+    width: 50%; /* Ajuste a porcentaje en lugar de flex */
+    background: #EBF227;
+    border-left: 2px solid black;
+    padding: 44px 5rem; /* Removido padding horizontal */
+    display: flex;
+    align-items: center;
+    position: relative; /* Para posicionamiento de elementos internos */
+    overflow: hidden; /* Importante para el efecto de recorte */
+  }
+  
+  .macbookContent {
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+  
+  .macbookImage {
+    width: 150%;
+    height: 100%;
+  }
+  
+  .macbookImage img {
+    width: 120%; /* Hace la imagen más grande que su contenedor */
+    height: auto;
+    object-fit: cover;
+    transform: translateX(-10%); /* Ajusta la posición horizontal de la imagen */
+  }
+  
+  .macbookImageContainer {
+    position: absolute;
+    right: -100px; /* Hace que la imagen sobresalga hacia la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%; /* Ajusta según necesites */
+    overflow: hidden;
+  }
+  
+  /* Estilos de texto */
+  .productInfo h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  .rightColumn .productInfo h2 {
+    font-size: 64px;
+    line-height: 56px;
+    font-weight: 250;
+  }
+  
+  .rightColumn .productInfo h2 span {
+    font-weight: 500;
+  }
+  
+  .rightColumn .productInfo {
+    width: 50%; /* Limita el ancho del texto */
+  }
+  
+  .productInfo p {
+    font-size: 32px;
+    color: #031240;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  
+  .visionSection .productInfo {
+    color: #EBF227;
+  }
+  
+  .visionSection .productInfo p {
+    color: #909090;
+  }
+  
+  /* Botón de oferta */
+  .offerButton {
+    margin-top: 16px;
+    padding: 16px 56px;
+    background: #EBF227;
+    border: 1px solid #031240;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }

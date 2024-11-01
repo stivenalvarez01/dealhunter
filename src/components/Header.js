@@ -1,10 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Asegúrate de importar Link
-import logo from '../source/logo.png'; // Asegúrate de que la ruta sea correcta
-import searchIcon from '../source/search-icon.png';
-import heartIcon from '../source/corazon.png';
-import userIcon from '../source/persona.png';
-import phoneIcon from '../source/phone-icon.png';
 import './Header.css'; // Asegúrate de importar tus estilos CSS.
 // import controllerIcon from '../source/controller-icon.png'; // Eliminar si no se usa
 
@@ -15,11 +10,11 @@ const Header = () => {
             <header className="header">
                 <div className="navbar">
                     <div className="logo">
-                        <img src={logo} alt="DealHunter Logo" />
+                        <img src='images/logo.png' alt="DealHunter Logo" />
                     </div>
                     <div className="search-bar">
                         <div className="icon">
-                            <img src={searchIcon} alt="lupa busqueda" />
+                            <img src='images/search-icon.png' alt="lupa busqueda" />
                         </div>
                         <div className="placeholder-text">Search</div>
                     </div>
@@ -34,10 +29,10 @@ const Header = () => {
                     </div>
                     <div className="icons">
                         <div className="icon heart-icon">
-                            <img src={heartIcon} alt="favoritos" />
+                            <img src='images/corazon.png' alt="favoritos" />
                         </div>
                         <div className="icon user-icon">
-                            <img src={userIcon} alt="persona login" />
+                            <img src='images/persona.png' alt="persona login" />
                         </div>
                     </div>
                 </div>
@@ -48,7 +43,7 @@ const Header = () => {
                 {['Smartphone', 'Laptops', 'Tablets', 'Componentes', 'Periféricos', 'Otros'].map((option, index) => (
                     <React.Fragment key={option}>
                         <div className="option-item">
-                            <img src={phoneIcon} alt={option} />
+                            <img src='images/phone-icon.png' alt={option} />
                             <div className={`icon ${option.toLowerCase()}-icon`}></div>
                             <div className="option-text">{option}</div>
                         </div>
