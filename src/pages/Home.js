@@ -1,7 +1,15 @@
 import React from 'react';
+import BannerPrincipal from '../components/BannerPrincipal';
+import BannerSegundo from '../components/BannerSegundo';
 
-function Home() {
-  return <h1>Bienvenido a la página de inicio</h1>;
+
+const Home = () => {
+  return (
+    <div>
+      <BannerPrincipal />
+      <BannerSegundo />
+    </div>
+  );
 }
 
 export default Home;
