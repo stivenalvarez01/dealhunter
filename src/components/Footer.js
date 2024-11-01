@@ -41,7 +41,7 @@ function Footer() {
         <ul className="footer-list">
           <li><Link to="/">Home</Link></li>
           <li>Contáctanos</li>
-          <li>Ofertas</li>
+          <li><Link to="/ofertas">Ofertas</Link></li>
           <li><Link to="/aliados">Aliados</Link></li>
         </ul>
       </div>

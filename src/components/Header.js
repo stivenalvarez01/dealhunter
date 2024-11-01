@@ -21,12 +21,12 @@ const Header = () => {
                     <div className="nav-links">
                         <li><Link to="/">Home</Link></li>
                         <span className="separator">&gt;</span>
-                        <Link to="/ofertas" className="inactive">Ofertas</Link>
+                        <li><Link to="/ofertas">Ofertas</Link></li>
                         <span className="separator">&gt;</span>
                         <Link to="/contacto" className="inactive">Contáctanos</Link>
                         <span className="separator">&gt;</span>
-                        <Link to="/aliados" className="inactive">Aliados</Link>
-                    </div>
+                        <li><Link to="/aliados">Aliados</Link></li>
+                        </div>
                     <div className="icons">
                         <div className="icon heart-icon">
                             <img src='images/corazon.png' alt="favoritos" />

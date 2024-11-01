@@ -23,7 +23,7 @@ const Ofertas = () => {
       </div>
       <div className={styles.pagination}>
         <button className={styles.pageBtn}>{"<"}</button>
-        <button className={styles.pagebtn.active}>1</button>
+        <button className={`${styles.pageBtn} ${styles.active}`}>1</button>
         <button className={styles.pageBtn}>2</button>
         <span className={styles.pageDots}>...</span>
         <button className={styles.pageBtn}>12</button>
