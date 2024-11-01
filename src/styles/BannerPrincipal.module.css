@@ -1,0 +1,71 @@
+.iphoneCard {
+    width: 100%;
+    height: 100%;
+    padding: 0 160px;
+    background: #031859;
+    box-shadow: 0px 1px 100px 84px rgba(0, 0, 0, 0.21) inset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    height: 382px;
+    gap: 24px;
+  }
+  
+  .title {
+    font-size: 96px;
+    font-family: 'Lato', sans-serif;
+    line-height: 72px;
+    color: white;
+    display: flex;
+  }
+  
+  .title .bold {
+    font-weight: 600;
+  }
+  
+  .description {
+    color: #909090;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  
+  .discount {
+    width: 537px;
+    height: 68px;
+    padding: 16px 56px;
+    background: #EBF227;
+    border: 1px solid #EBF227;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    font-family: 'Lato', sans-serif;
+    color: #111111;
+  }
+  
+  .offer {
+    padding: 16px 56px;
+    border-radius: 6px;
+    border: 1px solid #EBF227;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    color: #EBF227;
+  }
+  
+  .imageContainer img {
+    width: 406px;
+    height: auto;
+  }
+  
