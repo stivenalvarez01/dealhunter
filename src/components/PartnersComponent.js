@@ -21,23 +21,23 @@ const Partners = () => {
           <p>Huawei</p>
         </div>
         <div className="partner">
-          <img src="/source/mercado-libre.png" alt="Mercado Libre" />
+          <img src="/images/mercado-libre.png" alt="Mercado Libre" />
           <p>Mercado Libre</p>
         </div>
         <div className="partner">
-          <img src="/source/alkosto.png" alt="Alkosto" />
+          <img src="/images/alkosto.png" alt="Alkosto" />
           <p>Alkosto</p>
         </div>
         <div className="partner">
-          <img src="/source/falabella.png" alt="Falabella" />
+          <img src="/images/falabella.png" alt="Falabella" />
           <p>Falabella</p>
         </div>
         <div className="partner">
-          <img src="/source/ishop.png" alt="Ishop" />
+          <img src="/images/ishop.png" alt="Ishop" />
           <p>Ishop</p>
         </div>
         <div className="partner">
-          <img src="/source/olimpica.png" alt="Olimpica" />
+          <img src="/images/olimpica.png" alt="Olimpica" />
           <p>Olimpica</p>
         </div>
       </div>
