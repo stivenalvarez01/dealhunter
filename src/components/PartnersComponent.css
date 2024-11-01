@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.title {
+    text-align: center;
+    color: #031859;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Estilos generales */
+.breadcrumb-container {
+    display: flex;
+    justify-content: left; /* Centra el breadcrumb */
+    padding: 20px; /* Ajusta el espacio alrededor */
+    padding-left: 10rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre los elementos */
+}
+
+.breadcrumb a {
+    color: #A4A4A4;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.breadcrumb .separator {
+    color: #A4A4A4;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+.breadcrumb span {
+    color: black;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+
+
+.title-aliados{
+    color: #031859;
+    text-align: center;
+    font-size: 64px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    word-wrap: break-word
+   
+}

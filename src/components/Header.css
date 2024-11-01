@@ -1,0 +1,610 @@
+/* Reseteo de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Asegúrate de que el body ocupe toda la pantalla */
+  body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0; /* Color de fondo de la página */
+  }
+  
+  /* Estilos para el encabezado */
+  .header {
+    background-color: #EBF227; /* Color de fondo del encabezado */
+    width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+    height: 88px;
+    padding: 16px 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar el header */
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 32px;
+  }
+  
+  .banner-main{
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Estilo del logo */
+  .logo {
+    width: 96px;
+    height: 32px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    /* Puedes agregar el logo aquí */
+  }
+  
+  .logo img {
+    width: 233px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+  }
+  
+  .logo span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #031240;
+  }
+  
+  /* Estilo de la barra de búsqueda */
+  .search-bar {
+    flex: 1;
+    height: 56px;
+    padding: 16px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+  
+  .search-bar .icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+  
+  .search-bar .icon::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+  }
+  
+  .search-icon-border {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 4px; /* Opcional: añade bordes redondeados si prefieres */
+  }
+  
+  
+  
+  .search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #989898;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 100%;
+    padding: 16px 160px;
+    background: #EBF227;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    box-sizing: border-box;
+    padding-right: 0%;
+  }
+  
+  /* Estilo de los enlaces de navegación */
+  .nav-links {
+    display: flex;
+    gap: 52px;
+  }
+  
+  .link {
+    color: #031240;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+  }
+  
+  .link.inactive {
+    opacity: 0.3;
+  }
+  /* Estilo de los iconos de usuario y favoritos */
+  .user-icons {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .user-icons .icon {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #031240;
+    border-radius: 50%;
+    background-color: #EBF227; /* Fondo del icono */
+  }
+  
+  .placeholder-text {
+    opacity: 0.5;
+    color: #04328C;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  
+  /* Iconos (corazón y usuario) */
+  .icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 32px;
+    height: 32px;
+    position: relative;
+  }
+  
+  .heart-icon::before {
+    content: '';
+    width: 20px;
+    height: 17.83px;
+    position: absolute;
+    left: 6px;
+    top: 7px;
+  }
+  
+  .user-icon::before {
+    content: '';
+    width: 17px;
+    height: 22px;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+  }
+  
+  .options-bar {
+    width: 100%;
+    padding: 8px 160px;
+    background: #031240;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .option-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #EBF227;
+    font-size: 16px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+  
+  .option-text {
+    line-height: 32px;
+    color: #EBF227;
+  }
+  
+  .divider {
+    width: 24px;
+    height: 0px;
+    border: 1px solid #EBF227;
+    transform: rotate(90deg);
+    opacity: 0.2;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    opacity: 0.5;
+  }
+  
+  /*hasta aqui llega el encabezado*/
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas */
+  }
+  
+  .large-image {
+    grid-column: 2 / 3; /* Ocupa toda la segunda columna */
+    grid-row: 1 / 3;    /* Ocupa ambas filas en esta columna */
+    height: 600px;
+  
+  }
+  
+  .medium-image {
+    grid-column: 1 / 2; /* Primera columna */
+    grid-row: 1 / 2;    /* Primera fila */
+    height: 328px;
+  }
+  
+  .small-image {
+    grid-column: 1 / 2; /* Primera columna */
+    grid-row: 2 / 3;    /* Segunda fila */
+    height: 272px;
+  
+  }
+  
+  .small-images-container {
+    display: flex;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para las imágenes pequeñas */
+    grid-column: 1 / 2; /* Primera columna */
+    grid-row: 2 / 3;    /* Segunda fila */
+  }
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Layout principal */
+  .grid-layout {
+    display: flex;
+    width: 100%;
+    margin: 0 auto; /* Centra el contenido */
+    height: 100vh;
+    max-height: 600px;
+  }
+  
+  /* Columna izquierda */
+  .left-column {
+    width: 50%; /* Ajuste a porcentaje en lugar de flex */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .playstation-section {
+    height: 328px;
+    background: #B8C6D9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    overflow: hidden; /* Previene que las imágenes sobresalgan */
+  }
+  
+  .playstation-section img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Sección productos pequeños */
+  .small-products {
+    display: flex;
+    height: 272px;
+  }
+  
+  .airpods-section, .vision-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    overflow: hidden;
+  }
+  
+  .airpods-section {
+    background: #EBF227;
+  }
+  
+  .vision-section {
+    background: #031859;
+  }
+  
+  .airpods-section img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  
+  .vision-section img {
+    width: 40%;
+    height: 100%;
+    object-fit: fill;
+    transform: translateX(-50%);
+    transform: scaleX(-1);
+  }
+  
+  /* Columna derecha - MacBook */
+  .right-column {
+    width: 50%; /* Ajuste a porcentaje en lugar de flex */
+    background: #EBF227;
+    border-left: 2px solid black;
+    padding: 44px 5rem; /* Removido padding horizontal */
+    display: flex;
+    align-items: center;
+    position: relative; /* Para posicionamiento de elementos internos */
+    overflow: hidden; /* Importante para el efecto de recorte */
+  }
+  
+  .macbook-content {
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+  
+  .macbook-image {
+    width: 150%;
+    height: 100%;
+  }
+  
+  .macbook-image img {
+    width: 120%; /* Hace la imagen más grande que su contenedor */
+    height: auto;
+    object-fit: cover;
+    transform: translateX(-10%); /* Ajusta la posición horizontal de la imagen */
+  }
+  
+  .macbook-image-container {
+    position: absolute;
+    right: -100px; /* Hace que la imagen sobresalga hacia la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%; /* Ajusta según necesites */
+    overflow: hidden;
+  }
+  
+  /* Estilos de texto */
+  .product-info h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  .right-column .product-info h2 {
+    font-size: 64px;
+    line-height: 56px;
+    font-weight: 250;
+  }
+  
+  .right-column .product-info h2 span {
+    font-weight: 500;
+  }
+  
+  .right-column .product-info {
+    width: 50%; /* Limita el ancho del texto */
+  }
+  
+  .product-info p {
+    font-size: 32px;
+    color: #031240;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  
+  .vision-section .product-info {
+    color: #EBF227;
+  }
+  
+  .vision-section .product-info p {
+    color: #909090;
+  }
+  
+  /* Botón de oferta */
+  .offer-button {
+    margin-top: 16px;
+    padding: 16px 56px;
+    background: #EBF227;
+    border: 1px solid #031240;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 1200px) {
+    .macbook-image-container {
+        right: -50px;
+        width: 60%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .grid-layout {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+    }
+  
+    .left-column, .right-column {
+        width: 100%;
+    }
+  
+    .macbook-image-container {
+        position: relative;
+        right: 0;
+        width: 100%;
+        transform: none;
+        margin-top: 20px;
+    }
+  
+    .macbook-content {
+        flex-direction: column;
+    }
+  
+    .right-column .product-info {
+        width: 100%;
+        text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .small-products {
+        flex-direction: column;
+        height: auto;
+    }
+  
+    .playstation-section, .airpods-section, .vision-section {
+        padding: 20px;
+    }
+  
+    .product-info {
+        padding: 0 20px;
+    }
+  }
+  
+  .category-container {
+    width: 100%;
+    height: 100%;
+    padding: 80px 160px;
+    background-color: #B8C6D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+  }
+  
+  .category-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    text-align: center;
+    color: #031240;
+    font-size: 40px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0.40px;
+  }
+  
+  .category-grid {
+    display: flex;
+    gap: 32px;
+  }
+  
+  .category-card {
+    width: 160px;
+    height: 128px;
+    padding: 24px 52px;
+    background-color: #3F528C;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .category-name {
+    text-align: center;
+    font-size: 16px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  
+  /* Ajusta los colores de texto según el diseño */
+  .category-card:nth-child(1) .category-name,
+  .category-card:nth-child(2) .category-name,
+  .category-card:nth-child(3) .category-name,
+  .category-card:nth-child(4) .category-name,
+  .category-card:nth-child(5) .category-name,
+  .category-card:nth-child(6) .category-name {
+    color: #EBF227;
+  }
+  .category-icon {
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  
+  .smartphones-icon {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIiBzdHJva2U9IiNFQkYyMjciPjxwYXRoIGQ9Ik0zMy4zNzUgNS4yNWgtMTguNzVhMi4zNDQgMi4zNDQgMCAwIDAtMi4zNDQgMi4zNDR2MzIuODEyYTIuMzQ0IDIuMzQ0IDAgMCAwIDIuMzQ0IDIuMzQ0aDE4Ljc1YTIuMzQ0IDIuMzQ0IDAgMCAwIDIuMzQ0LTIuMzQ0VjcuNTk0YTIuMzQ0IDIuMzQ0IDAgMCAwLTIuMzQ0LTIuMzQ0WiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjIgNmg0LjY4OCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjQgMzcuNzE5di4wMjEiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMyAzNGgyMiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImEiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDBoNDh2NDhIMHoiLz48L2NsaXBQYXRoPjwvZGVmcz48L3N2Zz4='); /* Aquí pegas el SVG en base64 */
+  }
+  
+  .smartwatches-icon {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzgyM18zNzIzKSI+CjxwYXRoIGQ9Ik0zMCAxMkgxOEMxNC42ODYzIDEyIDEyIDE0LjY4NjMgMTIgMThWMzBDMTIgMzMuMzEzNyAxNC42ODYzIDM2IDE4IDM2SDMwQzMzLjMxMzcgMzYgMzYgMzMuMzEzNyAzNiAzMFYxOEMzNiAxNC42ODYzIDMzLjMxMzcgMTIgMzAgMTJaIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOCAzNlY0MkgzMFYzNiIgc3Ryb2tlPSIjRUJGMjI3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTggMTJWNkgzMFYxMiIgc3Ryb2tlPSIjRUJGMjI3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8bGluZSB4MT0iMjAuNzE0NCIgeTE9IjE4IiB4Mj0iMjAuNzE0NCIgeTI9IjI5IiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxsaW5lIHgxPSIyNC43MTQ0IiB5MT0iMjMiIHgyPSIyNC43MTQ0IiB5Mj0iMjkiIHN0cm9rZT0iI0VCRjIyNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGxpbmUgeDE9IjI4LjcxNDQiIHkxPSIyMSIgeDI9IjI4LjcxNDQiIHkyPSIyOSIgc3Ryb2tlPSIjRUJGMjI3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzgyM18zNzIzIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPg==');
+  }
+  
+  .cameras-icon {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzgyM18zNzU4KSI+CjxwYXRoIGQ9Ik0xMCAxNEgxMkMxMy4wNjA5IDE0IDE0LjA3ODMgMTMuNTc4NiAxNC44Mjg0IDEyLjgyODRDMTUuNTc4NiAxMi4wNzgzIDE2IDExLjA2MDkgMTYgMTBDMTYgOS40Njk1NyAxNi4yMTA3IDguOTYwODYgMTYuNTg1OCA4LjU4NTc5QzE2Ljk2MDkgOC4yMTA3MSAxNy40Njk2IDggMTggOEgzMEMzMC41MzA0IDggMzEuMDM5MSA4LjIxMDcxIDMxLjQxNDIgOC41ODU3OUMzMS43ODkzIDguOTYwODYgMzIgOS40Njk1NyAzMiAxMEMzMiAxMS4wNjA5IDMyLjQyMTQgMTIuMDc4MyAzMy4xNzE2IDEyLjgyODRDMzMuOTIxNyAxMy41Nzg2IDM0LjkzOTEgMTQgMzYgMTRIMzhDMzkuMDYwOSAxNCA0MC4wNzgzIDE0LjQyMTQgNDAuODI4NCAxNS4xNzE2QzQxLjU3ODYgMTUuOTIxNyA0MiAxNi45MzkxIDQyIDE4VjM2QzQyIDM3LjA2MDkgNDEuNTc4NiAzOC4wNzgzIDQwLjgyODQgMzguODI4NEM0MC4wNzgzIDM5LjU3ODYgMzkuMDYwOSA0MCAzOCA0MEgxMEM4LjkzOTEzIDQwIDcuOTIxNzIgMzkuNTc4NiA3LjE3MTU3IDM4LjgyODRDNi40MjE0MyAzOC4wNzgzIDYgMzcuMDYwOSA2IDM2VjE4QzYgMTYuOTM5MSA2LjQyMTQzIDE1LjkyMTcgNy4xNzE1NyAxNS4xNzE2QzcuOTIxNzIgMTQuNDIxNCA4LjkzOTEzIDE0IDEwIDE0IiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yNCAzMkMyNy4zMTM3IDMyIDMwIDI5LjMxMzcgMzAgMjZDMzAgMjIuNjg2MyAyNy4zMTM3IDIwIDI0IDIwQzIwLjY4NjMgMjAgMTggMjIuNjg2MyAxOCAyNkMxOCAyOS4zMTM3IDIwLjY4NjMgMzIgMjQgMzJaIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfODIzXzM3NTgiPgo8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==');
+  }
+  
+  .headphones-icon {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzgyM18zNDc2KSI+CjxwYXRoIGQ9Ik0xNCAyNkgxMkM5Ljc5MDg2IDI2IDggMjcuNzkwOSA4IDMwVjM2QzggMzguMjA5MSA5Ljc5MDg2IDQwIDEyIDQwSDE0QzE2LjIwOTEgNDAgMTggMzguMjA5MSAxOCAzNlYzMEMxOCAyNy43OTA5IDE2LjIwOTEgMjYgMTQgMjZaIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiAyNkgzNEMzMS43OTA5IDI2IDMwIDI3Ljc5MDkgMzAgMzBWMzZDMzAgMzguMjA5MSAzMS43OTA5IDQwIDM0IDQwSDM2QzM4LjIwOTEgNDAgNDAgMzguMjA5MSA0MCAzNlYzMEM0MCAyNy43OTA5IDM4LjIwOTEgMjYgMzYgMjZaIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik04IDMwVjI0QzggMTkuNzU2NSA5LjY4NTcxIDE1LjY4NjkgMTIuNjg2MyAxMi42ODYzQzE1LjY4NjkgOS42ODU3MSAxOS43NTY1IDggMjQgOEMyOC4yNDM1IDggMzIuMzEzMSA5LjY4NTcxIDM1LjMxMzcgMTIuNjg2M0MzOC4zMTQzIDE1LjY4NjkgNDAgMTkuNzU2NSA0MCAyNFYzMCIgc3Ryb2tlPSIjRUJGMjI3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzgyM18zNDc2Ij4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgoK');
+  }
+  
+  .laptops-icon {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9Ikljb24vQ29tcHV0ZXJzIiBjbGlwLXBhdGg9InVybCgjY2xpcDBfODIzXzM0KSI+CjxwYXRoIGlkPSJWZWN0b3IiIGQ9Ik00MCA4SDhDNi44OTU0MyA4IDYgOC44OTU0MyA2IDEwVjMwQzYgMzEuMTA0NiA2Ljg5NTQzIDMyIDggMzJINDBDNDEuMTA0NiAzMiA0MiAzMS4xMDQ2IDQyIDMwVjEwQzQyIDguODk1NDMgNDEuMTA0NiA4IDQwIDhaIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJWZWN0b3JfMiIgZD0iTTE0IDQwSDM0IiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJWZWN0b3JfMyIgZD0iTTE4IDMyVjQwIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJWZWN0b3JfNCIgZD0iTTMwIDMyVjQwIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJMaW5lIDEyIiBkPSJNNi44NTcxOCAyNy40Mjg2SDQxLjE0MjkiIHN0cm9rZT0iI0VCRjIyNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF84MjNfMzQiPgo8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cgo=');
+  }
+  
+  .gaming-icon {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9Ikljb24vR2FtaW5nIiBjbGlwLXBhdGg9InVybCgjY2xpcDBfODIzXzMzNzIpIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTQwIDEySDhDNS43OTA4NiAxMiA0IDEzLjc5MDkgNCAxNlYzMkM0IDM0LjIwOTEgNS43OTA4NiAzNiA4IDM2SDQwQzQyLjIwOTEgMzYgNDQgMzQuMjA5MSA0NCAzMlYxNkM0NCAxMy43OTA5IDQyLjIwOTEgMTIgNDAgMTJaIiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJWZWN0b3JfMiIgZD0iTTEyIDI0SDIwTTE2IDIwVjI4IiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJWZWN0b3JfMyIgZD0iTTMwIDIyVjIyLjAyMDciIHN0cm9rZT0iI0VCRjIyNyIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggaWQ9IlZlY3Rvcl80IiBkPSJNMzYgMjUuOTk5OVYyNi4wMjA2IiBzdHJva2U9IiNFQkYyMjciIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfODIzXzMzNzIiPgo8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cgo=');
+  }
+  
+  
+  
+  /* Efecto de hover */
+  .category-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.5); /* Cambia el color al pasar el cursor */
+  }
+  
+  .partners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px;
+    text-align: center;
+    padding: 5rem;
+    height: 50rem;
+  }
+  
+  .partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .partner img {
+    width: 15rem;
+    height: auto;
+  }
+  
+  .partner p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
