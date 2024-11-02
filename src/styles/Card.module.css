@@ -1,0 +1,97 @@
+.card {
+    width: 100%;
+    height: 100%;
+    padding: 24px 16px;
+    background: rgba(184, 198, 217, 0.50);
+    border-radius: 9px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    display: inline-flex;
+}
+
+.cardHeader {
+    align-self: stretch;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+
+.iconContainer {
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.iconBorder {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    border: 1.4px solid #031240; /* Color del borde */
+}
+
+.cardImage {
+    width: 160px;
+    height: 160px;
+}
+
+.cardBody {
+    align-self: stretch;
+    height: 160px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    display: flex;
+}
+
+.cardTitle {
+    align-self: stretch;
+    text-align: center;
+    color: #2E2E2E;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.cardPrice {
+    align-self: stretch;
+    text-align: center;
+    color: #2E2E2E;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.72px;
+    word-wrap: break-word;
+}
+
+.compareButton {
+    padding: 12px 64px;
+    background: #031240;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+
+.compareButtonText {
+    text-align: center;
+    color: #EBF227;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}

@@ -1,0 +1,77 @@
+/* Contenedor general del segmento de productos */
+.productSegmentContainer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Estilo general */
+  }
+  
+  .sectionTitle {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Botones de segmento */
+  .segmentButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .segmentButton {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .segmentButtonActive {
+    background-color: #333; /* Color activo según el diseño */
+    color: #fff;
+  }
+  
+  /* Lista de productos */
+  .productList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 16px; /* Espacio entre los elementos */
+    padding: 16px; /* Opcional: espacio alrededor de la cuadrícula */
+  }
+  
+  .productCard {
+    background-color: rgba(184, 198, 217, 0.50); /* Estilo de la tarjeta */
+    border-radius: 9px; /* Bordes redondeados */
+    padding: 24px; /* Espaciado interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  
+  .productCard:hover {
+    transform: scale(1.05);
+  }
+  
+  .productImage {
+    height: 150px;
+    background-color: #f0f0f0; /* Para simular la imagen, puedes reemplazar con una imagen real */
+    margin-bottom: 15px;
+  }
+  
+  .productName {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .productPrice {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
