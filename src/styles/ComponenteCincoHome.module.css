@@ -1,0 +1,59 @@
+.cardRow {
+  display: flex;
+  justify-content: center;
+  background-color: #f3f6fb; /* Color de fondo */
+}
+
+.card {
+  background-color: rgba(184, 198, 217, 0.5);
+  flex: 1 1 calc(25% - 16px); /* Permite 4 tarjetas en una fila y ajusta el tamaño según el espacio */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.cardTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #031240;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.offerButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #031240;
+  background-color: transparent;
+  border: 1px solid #031240;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.offerButton:hover {
+  background-color: #031240;
+  color: #fff;
+}

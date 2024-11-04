@@ -6,7 +6,7 @@ const BannerPrincipal = () => {
     <div className={styles.iphoneCard}>
       <div className={styles.content}>
       <div className={styles.title}> {/* Esta línea es correcta */}
-      <span>IPhone 14 </span>
+      <span className={styles.title}>iPhone 14 </span>
           <span className={styles.bold}>Pro</span>
         </div>
         <p className={styles.description}>Created to change everything for the better. For everyone</p>

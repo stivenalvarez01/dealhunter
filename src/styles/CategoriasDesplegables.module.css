@@ -3,7 +3,7 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Estilo general */
+    font-family: 'Lato', sans-serif; /* Estilo general */
   }
   
   .sectionTitle {
@@ -15,29 +15,37 @@
   /* Botones de segmento */
   .segmentButtons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 30px;
+    padding-top: 3rem;
+    padding-left: 25%;
+    font-family: 'Lato', sans-serif; /* Estilo general */
+
   }
   
   .segmentButton {
     padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1rem;
-    background-color: #f3f3f3;
     border: none;
-    border-radius: 20px;
+    background-color: transparent;
+    color: #33333398;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'Lato', sans-serif; /* Estilo general */
+
   }
   
-  .segmentButtonActive {
-    background-color: #333; /* Color activo según el diseño */
-    color: #fff;
+  .active {
+    color: #0e0000;
+    font-family: 'Lato', sans-serif; /* Estilo general */
+    text-decoration-line: underline;
   }
   
   /* Lista de productos */
   .productList {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columnas */
     gap: 16px; /* Espacio entre los elementos */
     padding: 16px; /* Opcional: espacio alrededor de la cuadrícula */
