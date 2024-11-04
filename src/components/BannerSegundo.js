@@ -5,7 +5,7 @@ const BannerSecundario = () => {
   return (
     <div className={styles.gridLayout}>
       {/* Columna izquierda */}
-      <div className={styles.eftColumn}>
+      <div className={styles.leftColumn}>
         {/* PlayStation Section */}
         <div className={styles.playstationSection}>
           <img src='/images/ps5.png' alt="PlayStation 5" />

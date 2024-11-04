@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+
   }
   
   /* Asegúrate de que el body ocupe toda la pantalla */
@@ -12,6 +14,7 @@
     display: flex;
     flex-direction: column;
     background-color: #f0f0f0; /* Color de fondo de la página */
+
   }
   
   /* Estilos para el encabezado */

@@ -1,0 +1,13 @@
+/* BannerImagen.module.css */
+
+.bannerContainer {
+    width: 100%;
+    overflow: hidden; /* Asegura que no haya desbordamiento en la pantalla */
+  }
+  
+  .bannerImage {
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block;
+  }
+  

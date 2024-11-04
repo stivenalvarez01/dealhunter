@@ -16,13 +16,14 @@ const CardRow = () => {
     {
       title: 'Samsung Galaxy A15',
       description: 'El Samsung Galaxy A15 cuenta con una vibrante pantalla, un rendimiento sólido, cámara versátil y una experiencia de uso fluida, todo en un diseño elegante y accesible.',
-      image: 'https://via.placeholder.com/371x390'
+      image: '/images/samsung.png'
     },
     {
       title: 'Macbook Pro',
       description: 'La MacBook Pro combina una potente pantalla Retina, alto rendimiento y larga duración de batería en un diseño elegante.',
-      image: 'https://via.placeholder.com/371x390'
+      image: '/images/MacBook.png'
     }
+    
   ];
 
   return (

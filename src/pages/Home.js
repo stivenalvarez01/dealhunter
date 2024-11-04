@@ -4,6 +4,8 @@ import BannerSegundo from '../components/BannerSegundo';
 import CategoriasComponent from '../components/CategoriasComponent';
 import CategoriasDespegables from '../components/CategoriasDesplegables';
 import ComponenteCincoHome from '../components/ComponenteCincoHome';
+import ComponenteSeisHome from '../components/ComponenteSeisHome';
+import ComponenteSieteHome from '../components/ComponenteSieteHome';
 
 
 
@@ -16,6 +18,10 @@ const Home = () => {
       <CategoriasComponent />
       <CategoriasDespegables />
       <ComponenteCincoHome />
+      <ComponenteSeisHome />
+      <ComponenteSieteHome />
+
+
 
       
     </div>
