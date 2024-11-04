@@ -1,0 +1,130 @@
+.container {
+    width: 100%;
+    padding: 56px 160px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 1000px;
+
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .title {
+    color: #031859;
+    font-size: 64px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+  }
+  
+  .subtitle {
+    color: #717171;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+  }
+  
+  .formContainer {
+    display: flex;
+    gap: 32px;
+    background: white;
+    box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    padding: 20px;
+    flex-direction: flex-start;
+  }
+  
+  .contactInfo {
+    width: 40%;
+    background: linear-gradient(0deg, #031859 0%, #031859 100%);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    height:40rem;
+
+  }
+  
+  .contactTitle {
+    font-size: 28px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-left: 3rem;
+
+  }
+  
+  .contactText {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    gap: 8px;
+    padding-left: 3rem;
+
+  }
+  
+  .form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formRow {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .inputGroup {
+    width: 100%;
+    position: relative;
+  }
+  
+  .label {
+    color: #8D8D8D;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+  }
+  
+  .input, .textarea {
+    border: none;                /* Elimina todos los bordes */
+    border-bottom: 2px solid #8D8D8D; /* Agrega solo el borde inferior */
+    padding: 8px 0;              /* Ajusta el espacio superior e inferior */
+    outline: none;               /* Elimina el borde que aparece al hacer clic */
+    width: 100%;                 /* Ajusta el ancho */
+    font-family: 'Lato', sans-serif; /* Asegura que use la fuente Lato */
+    font-size: 16px;             /* Ajusta el tamaño de fuente según sea necesario */
+  
+  }
+
+  .input:focus, .textarea:focus {
+    border-bottom: 2px solid #000000; /* Cambia el color del borde al enfocarse */
+  }
+  
+  .textarea {
+    height: 100px;
+  }
+  
+  .submitButton {
+    width: 146px;
+    padding: 15px;
+    background: #EBF227;
+    color: black;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.12);
+    align-self: flex-end;
+  }
+  

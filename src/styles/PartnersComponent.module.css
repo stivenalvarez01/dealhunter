@@ -19,7 +19,7 @@ body {
 }
 
 /* Estilos generales */
-.breadcrumb-container {
+.breadcrumbContainer {
     display: flex;
     justify-content: left; /* Centra el breadcrumb */
     padding: 20px; /* Ajusta el espacio alrededor */
@@ -54,9 +54,7 @@ body {
     opacity: 0.8;
 }
 
-
-
-.title-aliados{
+.titleAliados{
     color: #031859;
     text-align: center;
     font-size: 64px;
@@ -65,3 +63,35 @@ body {
     word-wrap: break-word
    
 }
+
+  /* Efecto de hover */
+  .category-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.5); /* Cambia el color al pasar el cursor */
+  }
+  
+  .partners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px;
+    text-align: center;
+    padding: 5rem;
+    height: 50rem;
+  }
+  
+  .partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .partner img {
+    width: 15rem;
+    height: auto;
+  }
+  
+  .partner p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }

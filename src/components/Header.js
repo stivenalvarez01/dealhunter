@@ -1,33 +1,61 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Asegúrate de importar Link
-import './Header.css'; // Asegúrate de importar tus estilos CSS.
-// import controllerIcon from '../source/controller-icon.png'; // Eliminar si no se usa
+import { Link, useLocation } from 'react-router-dom';
+import styles from '../styles/Header.module.css';
 
 const Header = () => {
+    // Obtener la ubicación actual
+    const currentLocation = useLocation();
+
     return (
         <>
             {/* Encabezado o Header */}
-            <header className="header">
-                <div className="navbar">
-                    <div className="logo">
+            <header className={styles.header}>
+                <div className={styles.navbar}>
+                    <div className={styles.logo}>
                         <img src='images/logo.png' alt="DealHunter Logo" />
                     </div>
-                    <div className="search-bar">
-                        <div className="icon">
-                            <img src='images/search-icon.png' alt="lupa busqueda" />
+                    <div className={styles.searchBar}>
+                        <div className={styles.icon}>
+                            <img src='images/search-icon.png' alt="lupa búsqueda" />
                         </div>
-                        <div className="placeholder-text">Search</div>
+                        <div className={styles.placeholderText}>Search</div>
                     </div>
-                    <div className="nav-links">
-                        <li><Link to="/">Home</Link></li>
-                        <span className="separator">&gt;</span>
-                        <li><Link to="/ofertas">Ofertas</Link></li>
-                        <span className="separator">&gt;</span>
-                        <li><Link to="/">Contactanos</Link></li>
-                        <span className="separator">&gt;</span>
-                        <li><Link to="/aliados">Aliados</Link></li>
-                    </div>
-                    <div className="icons">
+                    <ul className={styles.navLinks}> {/* Cambiado a <ul> para una mejor semántica */}
+                        <li>
+                            <Link
+                                to="/"
+                                className={`${styles.link} ${currentLocation.pathname === '/' ? styles.active : styles.inactive}`}
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/ofertas"
+                                className={`${styles.link} ${currentLocation.pathname === '/ofertas' ? styles.active : styles.inactive}`}
+                            >
+                                Ofertas
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/contacto"
+                                className={`${styles.link} ${currentLocation.pathname === '/contacto' ? styles.active : styles.inactive}`}
+                            >
+                                Contáctanos
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/aliados"
+                                className={`${styles.link} ${currentLocation.pathname === '/aliados' ? styles.active : styles.inactive}`}
+                            >
+                                Aliados
+                            </Link>
+                        </li>
+                    </ul>
+
+                    <div className={styles.icons}>
                         <div className="icon heart-icon">
                             <img src='images/corazon.png' alt="favoritos" />
                         </div>
@@ -39,15 +67,14 @@ const Header = () => {
             </header>
 
             {/* Barra de opciones */}
-            <div className="options-bar">
+            <div className={styles.optionsBar}>
                 {['Smartphone', 'Laptops', 'Tablets', 'Componentes', 'Periféricos', 'Otros'].map((option, index) => (
                     <React.Fragment key={option}>
-                        <div className="option-item">
+                        <div className={styles.optionItem}>
                             <img src='images/phone-icon.png' alt={option} />
-                            <div className={`icon ${option.toLowerCase()}-icon`}></div>
-                            <div className="option-text">{option}</div>
+                            <div className={styles.optionText}>{option}</div>
                         </div>
-                        {index < 5 && <div className="divider"></div>} {/* Agrega divisor solo si no es el último elemento */}
+                        {index < 5 && <div className={styles.divider}></div>} {/* Agrega divisor solo si no es el último elemento */}
                     </React.Fragment>
                 ))}
             </div>
@@ -56,4 +83,3 @@ const Header = () => {
 };
 
 export default Header;
-

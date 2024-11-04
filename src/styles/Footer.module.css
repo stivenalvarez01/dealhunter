@@ -6,17 +6,17 @@
     padding: 72px 55px 64px;
 }
 
-.footer-brand {
+.footerBrand {
     width: 290px;
     position: relative;
 }
 
-.footer-logo {
+.footerLogo {
     width: 70px;
     height: 72px;
 }
 
-.footer-title {
+.footerTitle {
     color: #EBF227;
     font-size: 20px;
     font-family: 'Montserrat Alternates', sans-serif;
@@ -27,11 +27,11 @@
     margin-left: 102px;
 }
 
-.footer-section {
+.footerSection {
     margin-bottom: 64px;
 }
 
-.footer-heading {
+.footerHeading {
     color: #EBF227;
     font-size: 16px;
     font-family: 'Lato', sans-serif;
@@ -40,7 +40,7 @@
     margin-bottom: 8px;
 }
 
-.footer-list {
+.footerList {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -60,25 +60,25 @@
 
 /* ... resto de estilos anteriores ... */
 
-.footer-brand-container {
+.footerBrandContainer {
     display: flex;
     flex-direction: column;
     gap: 3rem; /* Espacio entre el header y los iconos sociales */
     width: 290px;
 }
 
-.brand-header {
+.brandHeader {
     display: flex;
     align-items: center;
     gap: 32px; /* Espacio entre el logo y el título */
 }
 
-.footer-logo {
+.footerLogo {
     width: 70px;
     height: 72px;
 }
 
-.footer-title {
+.footerTitle {
     color: #EBF227;
     font-size: 20px;
     font-family: 'Montserrat Alternates', sans-serif;
@@ -88,32 +88,45 @@
     margin: 0; /* Eliminamos márgenes por defecto */
 }
 
-.social-icons {
+.socialIcons {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
 
-.social-icon {
+.socialIcon {
     width: 30px;
     height: 30px;
     cursor: pointer; /* Añade el cursor pointer al pasar por encima */
     transition: opacity 0.3s; /* Efecto suave al hacer hover */
 }
 
-.social-icon:hover {
+.socialIcon:hover {
     opacity: 0.8; /* Efecto de transparencia al pasar el mouse */
 }
 
 /* Si usas el método de imagen */
-.social-icon img {
+.socialIcon img {
     width: 100%;
     height: 100%;
 }
 
 /* Si quieres hacer los iconos clickeables */
-.social-icon a {
+.socialIcon a {
     display: block;
     width: 100%;
     height: 100%;
 }
+.link {
+    color: #031240;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .link:visited {
+    color: #CFCFCF; /* Fuerza el color del enlace visitado */
+    text-decoration: none;
+  }
+  
