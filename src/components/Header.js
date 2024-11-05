@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Importación unificada
 import styles from '../styles/Header.module.css';
+
 
 const Header = () => {
     // Obtener la ubicación actual
     const currentLocation = useLocation();
+
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
 
     return (
         <>
@@ -59,8 +66,8 @@ const Header = () => {
                         <div className="icon heart-icon">
                             <img src='images/corazon.png' alt="favoritos" />
                         </div>
-                        <div className="icon user-icon">
-                            <img src='images/persona.png' alt="persona login" />
+                        <div className="icon user-icon" onClick={handleLoginClick} style={{ cursor: 'pointer' }}>
+                            <img src="images/persona.png" alt="persona login" />
                         </div>
                     </div>
                 </div>

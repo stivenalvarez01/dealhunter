@@ -1,0 +1,95 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.formWrapper {
+    width: 611px;
+    height: 682px;
+    padding: 32px;
+    background: white;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.10);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 52px;
+}
+
+.title {
+    color: #031240;
+    font-size: 40px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+}
+
+.inputGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    color: #333333;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.input {
+    height: 42px;
+    padding: 8px 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #031240;
+    color: #B3B3B3;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+}
+
+.rememberText {
+    color: #333333;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.submitButton {
+    height: 42px;
+    padding: 8px 16px;
+    background: #04328C;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submitButton:hover {
+    background: #03257C;
+}

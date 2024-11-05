@@ -19,11 +19,7 @@ const Home = () => {
       <CategoriasDespegables />
       <ComponenteCincoHome />
       <ComponenteSeisHome />
-      <ComponenteSieteHome />
-
-
-
-      
+      <ComponenteSieteHome />      
     </div>
   );
 }

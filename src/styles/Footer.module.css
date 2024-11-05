@@ -3,7 +3,7 @@
     height: 100%;
     position: relative;
     background: #031240;
-    padding: 72px 55px 64px;
+    padding: 50px 55px 64px;
 }
 
 .footerBrand {
@@ -55,7 +55,7 @@
 .footer {
     display: flex;
     justify-content: space-evenly;
-    height: 357px;
+    height: 300px;
 }
 
 /* ... resto de estilos anteriores ... */
@@ -126,7 +126,7 @@
   }
   
   .link:visited {
-    color: #CFCFCF; /* Fuerza el color del enlace visitado */
+    color: #ffffff; /* Fuerza el color del enlace visitado */
     text-decoration: none;
   }
   
