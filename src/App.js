@@ -8,6 +8,8 @@ import OfertasPage from './pages/OfertasPage';
 import Contacto from './pages/Contacto';
 import Login from './components/login';
 import Registro from './components/Register';
+import SearchPage from './pages/SearchPage';
+
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
+        <Route path="/Search" element={<SearchPage />} />
+
 
       </Routes>
       <Footer />

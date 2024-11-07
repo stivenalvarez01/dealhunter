@@ -1,32 +1,54 @@
+// server.js
+
 const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
-
+const axios = require('axios');
+const cheerio = require('cheerio');
 const app = express();
-const PORT = process.env.PORT || 5000;
-const authRoutes = require('./routes/auth');
+const PORT = 5000;
 
+// Ruta de la API para búsqueda
+app.get('/api/search', async (req, res) => {
+  const query = req.query.q; // El término de búsqueda del usuario
 
-// Middleware
-app.use(cors());
-app.use(express.json()); // Para parsear el JSON en las solicitudes
-app.use('/api/auth', authRoutes);
+  if (!query) {
+    return res.status(400).json({ error: 'No se proporcionó un término de búsqueda.' });
+  }
 
-// Conexión a MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => console.log('Conectado a MongoDB'))
-.catch(err => console.error('Error de conexión a MongoDB:', err));
+  const url = `https://www.alkosto.com/search?text=${encodeURIComponent(query)}`;
 
-// Rutas (aquí es donde puedes agregar tus rutas más tarde)
-app.get('/', (req, res) => {
-    res.send('API funcionando');
+  try {
+    const { data } = await axios.get(url);
+    const $ = cheerio.load(data);
+
+    let products = [];
+
+    $('.product-item-info').each((index, element) => {
+      const name = $(element).find('.product__item__top__title js-algolia-product-click js-algolia-product-title').text().trim();
+      const price = $(element).find('.price').text().trim();
+      const link = $(element).find('.js-view-details js-algolia-product-click').attr('href');
+      const image = $(element).find('.product__item__information__image js-algolia-product-click').attr('src');
+
+      if (name && price && link) {
+        products.push({ name, price, link, image });
+      }
+    });
+
+    if (products.length === 0) {
+      return res.status(404).json({ error: 'No se encontraron productos.' });
+    }
+
+    res.json(products);
+  } catch (error) {
+    console.error('Error al realizar scraping:', error.message);
+    res.status(500).json({ error: 'Error al realizar scraping', details: error.message });
+  }
 });
 
-// Iniciar el servidor
+// Ruta para la raíz, solo para mostrar que el servidor está corriendo
+app.get('/', (req, res) => {
+  res.send('Servidor funcionando correctamente. Utiliza /api/search?q=tu_busqueda para buscar productos.');
+});
+
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

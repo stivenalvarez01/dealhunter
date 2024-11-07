@@ -226,9 +226,8 @@ body {
   gap: 8px;
   color: #EBF227;
   font-size: 16px;
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
-  opacity: 0.5;
 }
 
 .optionText {
