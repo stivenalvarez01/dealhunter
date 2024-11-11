@@ -73,8 +73,9 @@
     display: flex;
     height: 272px;
   }
-  
-  .airpodsSection, .visionSection {
+    
+  .airpodsSection {
+    background: #EBF227;
     flex: 1;
     display: flex;
     align-items: center;
@@ -83,12 +84,14 @@
     overflow: hidden;
   }
   
-  .airpodsSection {
-    background: #EBF227;
-  }
-  
   .visionSection {
     background: #031859;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    overflow: hidden;
   }
   
   .airpodsSection img {
@@ -151,6 +154,7 @@
     line-height: 40px;
     font-weight: 500;
     margin-bottom: 16px;
+    padding-left: 50px;
   }
   
   .rightColumn .productInfo h2 {
