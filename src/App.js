@@ -8,7 +8,7 @@ import OfertasPage from './pages/OfertasPage';
 import Contacto from './pages/Contacto';
 import Login from './components/login';
 import Registro from './components/Register';
-import SearchPage from './pages/SearchPage';
+import SearchResults from './components/SearchResults'; // Importar la nueva página de resultados
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
-        <Route path="/Search" element={<SearchPage />} />
+        <Route path="/search" element={<SearchResults />} /> {/* Ruta de resultados */}
 
 
       </Routes>

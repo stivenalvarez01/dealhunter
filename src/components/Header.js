@@ -1,62 +1,58 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Importación unificada
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from '../styles/Header.module.css';
 
-
 const Header = () => {
-    // Obtener la ubicación actual
     const currentLocation = useLocation();
-
     const navigate = useNavigate();
+    const [searchTerm, setSearchTerm] = useState(''); // Estado para manejar el término de búsqueda
 
     const handleLoginClick = () => {
         navigate('/login');
     };
 
+    const handleSearch = (event) => {
+        if (event.key === 'Enter') { // Verifica si se presionó la tecla Enter
+            navigate(`/search?query=${searchTerm}`); // Navega a la página de resultados
+        }
+    };
+
     return (
         <>
-            {/* Encabezado o Header */}
             <header className={styles.header}>
                 <div className={styles.navbar}>
                     <div className={styles.logo}>
                         <img src='images/logo.png' alt="DealHunter Logo" />
                     </div>
                     <div className={styles.searchBar}>
-                        <div className={styles.icon}>
-                            <img src='images/search-icon.png' alt="lupa búsqueda" />
-                        </div>
-                        <div className={styles.placeholderText}>Search</div>
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className={styles.searchInput}
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onKeyDown={handleSearch} // Llama a la función de búsqueda al presionar Enter
+                        />
                     </div>
-                    <ul className={styles.navLinks}> {/* Cambiado a <ul> para una mejor semántica */}
+                    <ul className={styles.navLinks}>
+                        {/* Enlaces de navegación */}
                         <li>
-                            <Link
-                                to="/"
-                                className={`${styles.link} ${currentLocation.pathname === '/' ? styles.active : styles.inactive}`}
-                            >
+                            <Link to="/" className={`${styles.link} ${currentLocation.pathname === '/' ? styles.active : ''}`}>
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                to="/ofertas"
-                                className={`${styles.link} ${currentLocation.pathname === '/ofertas' ? styles.active : styles.inactive}`}
-                            >
+                            <Link to="/ofertas" className={`${styles.link} ${currentLocation.pathname === '/ofertas' ? styles.active : ''}`}>
                                 Ofertas
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                to="/contacto"
-                                className={`${styles.link} ${currentLocation.pathname === '/contacto' ? styles.active : styles.inactive}`}
-                            >
+                            <Link to="/contacto" className={`${styles.link} ${currentLocation.pathname === '/contacto' ? styles.active : ''}`}>
                                 Contáctanos
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                to="/aliados"
-                                className={`${styles.link} ${currentLocation.pathname === '/aliados' ? styles.active : styles.inactive}`}
-                            >
+                            <Link to="/aliados" className={`${styles.link} ${currentLocation.pathname === '/aliados' ? styles.active : ''}`}>
                                 Aliados
                             </Link>
                         </li>
@@ -73,7 +69,6 @@ const Header = () => {
                 </div>
             </header>
 
-            {/* Barra de opciones */}
             <div className={styles.optionsBar}>
                 {['Smartphone', 'Laptops', 'Tablets', 'Componentes', 'Periféricos', 'Otros'].map((option, index) => (
                     <React.Fragment key={option}>
@@ -81,7 +76,7 @@ const Header = () => {
                             <img src='images/phone-icon.png' alt={option} />
                             <div className={styles.optionText}>{option}</div>
                         </div>
-                        {index < 5 && <div className={styles.divider}></div>} {/* Agrega divisor solo si no es el último elemento */}
+                        {index < 5 && <div className={styles.divider}></div>}
                     </React.Fragment>
                 ))}
             </div>
