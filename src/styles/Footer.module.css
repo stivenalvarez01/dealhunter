@@ -4,6 +4,8 @@
     position: relative;
     background: #031240;
     padding: 50px 55px 64px;
+    z-index: 1; /* Asegura que el footer esté por debajo del loader */
+
 }
 
 .footerBrand {
