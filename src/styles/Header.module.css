@@ -147,12 +147,12 @@ body {
 }
 
 .active {
-  color: #000000; /* Color oscuro para el enlace activo */
-  opacity: 1;      /* El enlace activo será totalmente visible */
+  color: #000000;
+  opacity: 1;
 }
 
 .inactive {
-  opacity: 0.5; /* Reduce la opacidad de los enlaces inactivos */
+  opacity: 0.5;
 }
 
 
@@ -243,11 +243,80 @@ body {
   opacity: 0.2;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  opacity: 0.5;
+/* Estilos responsivos */
+
+/* Ajuste para tablets */
+@media (max-width: 1024px) {
+  .header, .navbar, .optionsBar {
+    padding: 16px 80px;
+  }
+  .navLinks {
+    gap: 32px;
+  }
+  .logo img {
+    width: 180px;
+  }
+}
+
+/* Ajuste para pantallas medianas */
+@media (max-width: 768px) {
+  .header, .navbar, .optionsBar {
+    padding: 16px 40px;
+  }
+  .logo img {
+    width: 120px;
+  }
+  .navLinks {
+    display: none; /* Oculta la barra de navegación en pantallas más pequeñas */
+  }
+  .searchBar {
+    height: 48px;
+  }
+  .link {
+    font-size: 14px;
+  }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 480px) {
+  .header, .navbar, .optionsBar {
+    padding: 16px 20px;
+  }
+  .header {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+  }
+  .logo {
+    width: 80px;
+    margin-bottom: 8px;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .searchBar {
+    height: 40px;
+    padding: 8px;
+  }
+  .searchBar input {
+    font-size: 12px;
+  }
+  .optionItem {
+    font-size: 14px;
+  }
+  .optionText {
+    font-size: 14px;
+  }
+  .placeholderText {
+    font-size: 12px;
+  }
+  .icons {
+    gap: 16px;
+  }
+  .userIcons .icon, .icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /*hasta aqui llega el encabezado*/
