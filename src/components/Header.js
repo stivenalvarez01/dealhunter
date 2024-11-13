@@ -72,11 +72,14 @@ const Header = () => {
             <div className={styles.optionsBar}>
                 {['Smartphone', 'Laptops', 'Tablets', 'Componentes', 'Periféricos', 'Otros'].map((option, index) => (
                     <React.Fragment key={option}>
-                        <div className={styles.optionItem}>
+                        {/* Usamos Link para hacer que cada opción redirija a una página de producto específica */}
+                        <Link 
+                            to= '/Productos' 
+                            className={styles.optionItem}>
                             <img src='images/phone-icon.png' alt={option} />
                             <div className={styles.optionText}>{option}</div>
-                        </div>
-                        {index < 5 && <div className={styles.divider}></div>}
+                        </Link>
+                        {index < 5 && <div className={styles.divider}></div>} {/* Agrega divisor solo si no es el último elemento */}
                     </React.Fragment>
                 ))}
             </div>

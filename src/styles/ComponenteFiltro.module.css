@@ -1,0 +1,59 @@
+.filtroContainer {
+    width: 300px; /* Aumenta el ancho del contenedor de filtro */
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Agrega un color de fondo suave */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  .filtroSection {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .filtroSection h3 {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px; /* Tamaño de fuente un poco más grande */
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .filtroContent {
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 16px; /* Tamaño de fuente más grande para opciones */
+  }
+  
+  .rangeValues {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para las opciones de cada sección */
+  .filtroContent ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .filtroContent li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .filtroContent input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Hace los checkboxes un poco más grandes */
+  }
+  
