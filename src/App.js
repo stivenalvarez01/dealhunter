@@ -9,7 +9,8 @@ import ProductosPage from './pages/ProductosPage';
 import Contacto from './pages/Contacto';
 import Login from './components/login';
 import Registro from './components/Register';
-import SearchResults from './components/SearchResults'; // Importar la nueva página de resultados
+import SearchResults from './components/SearchResults';
+import ProductDetails from './pages/ProductDetails'; // Página de detalles del producto
 
 
 function App() {
@@ -25,8 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/search" element={<SearchResults />} /> {/* Ruta de resultados */}
-
-
+        <Route path="/product/:id" element={<ProductDetails />} /> {/* Ruta con parámetro `id` */}
       </Routes>
       <Footer />
     </Router>

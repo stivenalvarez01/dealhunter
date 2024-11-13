@@ -1,62 +1,64 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom'; // Importamos Link de react-router-dom
+import LoadingAnimation from './LoadingAnimation';
+import styles from '../styles/SearchResult.module.css';
 
 const SearchResults = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const location = useLocation();
-    
-    // Extrae el término de búsqueda de la URL
     const searchTerm = new URLSearchParams(location.search).get("query");
 
     useEffect(() => {
         const fetchProducts = async () => {
-            setLoading(true);  // Muestra el estado de carga
+            setLoading(true);
 
             try {
                 const response = await fetch(`http://127.0.0.1:5000/api/search?query=${searchTerm}`);
-                
                 if (response.ok) {
                     const data = await response.json();
-                    setProducts(data); // Guarda los productos en el estado
+                    setProducts(data);
                 } else {
                     console.error("Error al obtener los productos:", response.statusText);
-                    setProducts([]); // En caso de error, asegura que no se muestren productos
+                    setProducts([]);
                 }
             } catch (error) {
                 console.error("Error en la solicitud de productos:", error);
                 setProducts([]);
             } finally {
-                setLoading(false); // Termina el estado de carga
+                setLoading(false);
             }
         };
 
         if (searchTerm) {
-            fetchProducts(); // Ejecuta la búsqueda solo si hay un término
+            fetchProducts();
         }
     }, [searchTerm]);
 
     if (loading) {
-        return <div>Cargando...</div>;
+        return <LoadingAnimation />;
     }
 
     if (products.length === 0) {
-        return <div>No se encontraron productos.</div>;
+        return <div className={styles.noResults}>No se encontraron productos.</div>;
     }
 
     return (
-        <div>
+        <div className={styles.searchResults}>
             <h2>Resultados para: "{searchTerm}"</h2>
-            <ul>
-                {products.map((product, index) => (
-                    <li key={index}>
-                        <img src={product.img} alt={product.title} />
-                        <h3>{product.title}</h3>
-                        <p>{product.price}</p>
-                        <a href={product.link} target="_blank" rel="noopener noreferrer">Ver producto</a>
-                    </li>
+            <div className={styles.productList}>
+                {products.map((product) => (
+                    <div key={product.id} className={styles.productItem}>
+                        <Link to={`/product/${product.id}`} className={styles.productLink}> {/* Vinculo a la página de detalles */}
+                            <img src={product.img} alt={product.title} />
+                            <div className={styles.productInfo}>
+                                <h3>{product.title}</h3>
+                                <p>{product.price}</p>
+                            </div>
+                        </Link>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };
