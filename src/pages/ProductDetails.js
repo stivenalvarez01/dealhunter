@@ -1,50 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductImageAndPrices from '../components/ProductImageAndPrices';
 import ProductFeature from '../components/ProductFeatures';
-import styles from '../styles/ProductDetails.module.css';
+import ProductImageAndPrices from '../components/ProductImageAndPrices';
 
 const ProductDetails = () => {
-    const { id } = useParams(); // Obtén el id del producto desde la URL
-    const [product, setProduct] = useState(null);
-    const [loading, setLoading] = useState(true);
+  const { id } = useParams(); // Extrae el ID de la URL
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchProductDetails = async () => {
-            setLoading(true);
-            try {
-                const response = await fetch(`http://127.0.0.1:5000/api/products/${id}`);
-                if (response.ok) {
-                    const data = await response.json();
-                    setProduct(data); // Guardamos los datos del producto en el estado
-                } else {
-                    console.error("Error al obtener los detalles del producto:", response.statusText);
-                }
-            } catch (error) {
-                console.error("Error en la solicitud del producto:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+  useEffect(() => {
+    const fetchProductDetails = async () => {
+      setLoading(true);
+      setError(null);
 
-        fetchProductDetails();
-    }, [id]);
+      try {
+        const response = await fetch(`http://localhost:5000/api/product/${id}`);
+        if (!response.ok) {
+          throw new Error('Producto no encontrado');
+        }
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    if (loading) {
-        return <div>Cargando...</div>;
-    }
+    fetchProductDetails();
+  }, [id]);
 
-    if (!product) {
-        return <div>Producto no encontrado</div>;
-    }
+  if (loading) {
+    return <p>Cargando producto...</p>;
+  }
 
-    return (
-        <div className={styles.productDetails}>
-            <h2>{product.title}</h2>
-            <ProductImageAndPrices image={product.img} prices={product.prices} />
-            <ProductFeature features={product.features} />
-        </div>
-    );
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (!product) {
+    return <p>Producto no encontrado.</p>;
+  }
+
+  return (
+    <div>
+      <h1>{product.title}</h1>
+      <ProductImageAndPrices image={product.img} prices={product.prices || []} />
+      <ProductFeature features={product.features || []} />
+    </div>
+  );
 };
 
 export default ProductDetails;

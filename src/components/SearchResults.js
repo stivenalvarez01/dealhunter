@@ -49,7 +49,7 @@ const SearchResults = () => {
             <div className={styles.productList}>
                 {products.map((product) => (
                     <div key={product.id} className={styles.productItem}>
-                        <Link to={`/product/${product.id}`} className={styles.productLink}> {/* Vinculo a la página de detalles */}
+                        <Link to={`/product/${product.id}`} className={styles.productLink}>
                             <img src={product.img} alt={product.title} />
                             <div className={styles.productInfo}>
                                 <h3>{product.title}</h3>
@@ -58,6 +58,7 @@ const SearchResults = () => {
                         </Link>
                     </div>
                 ))}
+
             </div>
         </div>
     );

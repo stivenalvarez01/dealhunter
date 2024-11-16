@@ -26,8 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/search" element={<SearchResults />} /> {/* Ruta de resultados */}
-        <Route path="/product/:id" element={<ProductDetails />} /> {/* Ruta con parámetro `id` */}
-      </Routes>
+        <Route path="/product/:productId" element={<ProductDetails />} />      </Routes>
       <Footer />
     </Router>
   );
