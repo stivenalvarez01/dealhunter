@@ -9,8 +9,8 @@ CORS(app)
 def search_products():
     query = request.args.get("query")
     products = get_product_list(query)
-    print("Productos enviados:", products)  # Verificar en consola del servidor
     return jsonify(products)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
