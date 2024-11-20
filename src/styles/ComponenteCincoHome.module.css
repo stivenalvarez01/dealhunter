@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   background-color: #f3f6fb; /* Color de fondo */
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas más pequeñas */
 }
 
 .card {
@@ -13,7 +14,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-
+  margin: 8px;
+  box-sizing: border-box;
 }
 
 .card:nth-child(1) {
@@ -35,6 +37,7 @@
 .cardImage {
   width: 100%;
   border-radius: 8px;
+  max-width: 300px; /* Limita el ancho máximo de la imagen */
 }
 
 .cardContent {
@@ -67,9 +70,78 @@
   border: 1px solid #031240;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .offerButton:hover {
   background-color: #031240;
   color: #fff;
+}
+
+/* Media Queries para Responsividad */
+
+/* Tablets (entre 768px y 1024px) */
+@media screen and (max-width: 1024px) {
+  .card {
+    flex: 1 1 calc(50% - 16px); /* Cambia a 2 tarjetas por fila */
+    margin: 8px;
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (menos de 768px) */
+@media screen and (max-width: 768px) {
+  .cardRow {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%; /* Una tarjeta por fila */
+    margin: 8px 0;
+    padding: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .cardImage {
+    max-width: 250px;
+  }
+
+  .offerButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Pantallas muy pequeñas (menos de 480px) */
+@media screen and (max-width: 480px) {
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardDescription {
+    font-size: 0.8rem;
+  }
+
+  .cardImage {
+    max-width: 200px;
+  }
+
+  .offerButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }

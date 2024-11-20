@@ -1,90 +1,161 @@
 /* Contenedor general del segmento de productos */
 .productSegmentContainer {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 5rem;
-    font-family: 'Lato', sans-serif; /* Estilo general */
-  }
-  
-  .segmentTitle{
-    font-size: 2rem;
-    margin: 20px;
-    padding-left: 20%;
-    padding-top: 5rem;
-    color: #000000;
-    font-family: 'Lato', sans-serif; /* Estilo general */
-    text-align: start;
-  }
-  
-  /* Botones de segmento */
-  .segmentButtons {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-    padding-top: 3rem;
-    padding-left: 25%;
-    font-family: 'Lato', sans-serif; /* Estilo general */
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 5rem;
+  font-family: 'Lato', sans-serif; /* Estilo general */
+}
 
-  }
-  
-  .segmentButton {
-    padding: 10px 20px;
-    border: none;
-    background-color: transparent;
-    color: #33333398;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-    font-family: 'Lato', sans-serif; /* Estilo general */
+.segmentTitle {
+  font-size: 2rem;
+  margin: 20px;
+  padding-left: 20%;
+  padding-top: 5rem;
+  color: #000000;
+  font-family: 'Lato', sans-serif;
+  text-align: start;
+}
 
-  }
-  
-  .active {
-    color: #0e0000;
-    font-family: 'Lato', sans-serif; /* Estilo general */
-    text-decoration-line: underline;
-  }
-  
-  /* Lista de productos */
+/* Botones de segmento */
+.segmentButtons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  padding-top: 3rem;
+  padding-left: 25%;
+  font-family: 'Lato', sans-serif;
+}
+
+.segmentButton {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: #33333398;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Lato', sans-serif;
+}
+
+.active {
+  color: #0e0000;
+  font-family: 'Lato', sans-serif;
+  text-decoration-line: underline;
+}
+
+/* Lista de productos */
+.productList {
+  display: inline-grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 16px;
+  padding: 16px;
+}
+
+.productCard {
+  background-color: rgba(184, 198, 217, 0.50);
+  border-radius: 9px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+}
+
+.productImage {
+  height: 150px;
+  background-color: #f0f0f0;
+  margin-bottom: 15px;
+}
+
+.productName {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.productPrice {
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Media Queries Responsivas */
+
+/* Tablets (entre 768px y 1024px) */
+@media screen and (max-width: 1024px) {
   .productList {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 16px; /* Espacio entre los elementos */
-    padding: 16px; /* Opcional: espacio alrededor de la cuadrícula */
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   }
-  
+
+  .segmentTitle,
+  .segmentButtons {
+      padding-left: 10%;
+  }
+
+  .segmentTitle {
+      font-size: 1.8rem;
+  }
+}
+
+/* Móviles (hasta 767px) */
+@media screen and (max-width: 767px) {
+  .productList {
+      grid-template-columns: repeat(1, 1fr); /* 1 columna */
+      padding: 8px;
+  }
+
+  .segmentTitle {
+      font-size: 1.5rem;
+      padding-left: 5%;
+      padding-top: 2rem;
+  }
+
+  .segmentButtons {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 5%;
+  }
+
+  .segmentButton {
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: left;
+  }
+
   .productCard {
-    background-color: rgba(184, 198, 217, 0.50); /* Estilo de la tarjeta */
-    border-radius: 9px; /* Bordes redondeados */
-    padding: 24px; /* Espaciado interno */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+      padding: 16px;
   }
-  
-  
-  .productCard:hover {
-    transform: scale(1.05);
-  }
-  
+
   .productImage {
-    height: 150px;
-    background-color: #f0f0f0; /* Para simular la imagen, puedes reemplazar con una imagen real */
-    margin-bottom: 15px;
+      height: 120px;
   }
-  
+}
+
+/* Dispositivos pequeños (móviles muy pequeños) */
+@media screen and (max-width: 375px) {
+  .segmentTitle {
+      font-size: 1.3rem;
+  }
+
+  .productCard {
+      padding: 12px;
+  }
+
+  .productImage {
+      height: 100px;
+  }
+
   .productName {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 10px;
+      font-size: 1em;
   }
-  
+
   .productPrice {
-    font-size: 1.2em;
-    color: #666;
+      font-size: 1.1em;
   }
-  
+}

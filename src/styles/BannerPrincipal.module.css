@@ -75,7 +75,7 @@
 
 /* Estilos responsivos */
 
-/* Tablets y pantallas medianas */
+/* Para Tablets y pantallas medianas (máximo de 1024px) */
 @media (max-width: 1024px) {
   .iphoneCard {
     padding: 0 200px; /* Reduce el padding lateral */
@@ -98,7 +98,7 @@
   }
 }
 
-/* Móviles y pantallas pequeñas */
+/* Para Móviles y pantallas pequeñas (máximo de 768px) */
 @media (max-width: 768px) {
   .iphoneCard {
     padding: 0 40px;
@@ -135,7 +135,7 @@
   }
 }
 
-/* Dispositivos muy pequeños */
+/* Para Dispositivos muy pequeños (máximo de 480px) */
 @media (max-width: 480px) {
   .iphoneCard {
     padding: 0 20px;
@@ -159,5 +159,6 @@
     width: 200px;
   }
 }
+
 
   
