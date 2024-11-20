@@ -4,8 +4,7 @@
     position: relative;
     background: #031240;
     padding: 50px 55px 64px;
-    z-index: 1; /* Asegura que el footer esté por debajo del loader */
-
+    z-index: 1;
 }
 
 .footerBrand {
@@ -65,14 +64,14 @@
 .footerBrandContainer {
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* Espacio entre el header y los iconos sociales */
+    gap: 3rem;
     width: 290px;
 }
 
 .brandHeader {
     display: flex;
     align-items: center;
-    gap: 32px; /* Espacio entre el logo y el título */
+    gap: 32px;
 }
 
 .footerLogo {
@@ -87,7 +86,7 @@
     font-weight: 700;
     line-height: 29px;
     letter-spacing: 7.20px;
-    margin: 0; /* Eliminamos márgenes por defecto */
+    margin: 0;
 }
 
 .socialIcons {
@@ -99,12 +98,12 @@
 .socialIcon {
     width: 30px;
     height: 30px;
-    cursor: pointer; /* Añade el cursor pointer al pasar por encima */
-    transition: opacity 0.3s; /* Efecto suave al hacer hover */
+    cursor: pointer;
+    transition: opacity 0.3s;
 }
 
 .socialIcon:hover {
-    opacity: 0.8; /* Efecto de transparencia al pasar el mouse */
+    opacity: 0.8;
 }
 
 /* Si usas el método de imagen */
@@ -119,16 +118,115 @@
     width: 100%;
     height: 100%;
 }
+
 .link {
     color: #031240;
     font-size: 16px;
     font-family: 'Lato', sans-serif;
     font-weight: 500;
     text-decoration: none;
-  }
-  
-  .link:visited {
-    color: #ffffff; /* Fuerza el color del enlace visitado */
+}
+
+.link:visited {
+    color: #ffffff;
     text-decoration: none;
-  }
-  
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    .footerBrandContainer {
+        width: 100%;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .brandHeader {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footerTitle {
+        margin-left: 0;
+        font-size: 18px;
+    }
+
+    .footerSection {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footerList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    .footerBrandContainer {
+        width: 100%;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .brandHeader {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footerLogo {
+        width: 50px;
+        height: 52px;
+    }
+
+    .footerTitle {
+        margin-left: 0;
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+
+    .footerSection {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footerHeading {
+        font-size: 14px;
+    }
+
+    .footerList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    .socialIcons {
+        gap: 15px;
+    }
+
+    .socialIcon {
+        width: 25px;
+        height: 25px;
+    }
+}

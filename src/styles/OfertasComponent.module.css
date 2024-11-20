@@ -5,35 +5,35 @@
 }
 
 .ofertasTitle {
-  font-size: 3rem; /* Un poco más pequeño */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
 .ofertasSubtitle {
-  font-size: 2rem; /* Tamaño adecuado para el subtítulo */
+  font-size: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: #000;
   text-align: left;
-  width: 80%; /* Controla el ancho para alinearlo con el slider */
-  margin: 0 auto; /* Asegura que el subtítulo esté centrado horizontalmente */
+  width: 80%;
+  margin: 0 auto;
 }
 
 .sliderContainer {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el slider horizontalmente */
+  align-items: center;
   justify-content: center;
-  width: 70%; /* Ajusta el ancho del contenedor del slider */
-  margin: 0 auto; /* Centra el contenedor del slider */
+  width: 70%;
+  margin: 0 auto;
   padding: 2rem 0;
 }
 
 .ofertasItems {
   display: flex;
-  justify-content: center; /* Centra los items dentro del slider */
-  gap: 1.5rem; /* Reduce la separación entre los items */
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -41,9 +41,9 @@
   display: flex;
   align-items: center;
   background-color: #e6ecf5;
-  padding: 2rem; /* Reduce el relleno */
+  padding: 2rem;
   border-radius: 12px;
-  width: 600px; /* Disminuye el ancho de cada tarjeta */
+  width: 600px;
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   gap: 2rem;
@@ -51,7 +51,7 @@
 
 .ofertaImage {
   display: block;
-  width: 200px; /* Reduce el tamaño de la imagen */
+  width: 200px;
   height: auto;
   border-radius: 10px;
 }
@@ -63,13 +63,13 @@
 }
 
 .ofertaTitle {
-  font-size: 2rem; /* Disminuye el tamaño del título */
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.8rem;
 }
 
 .ofertaDiscount {
-  font-size: 2rem; /* Disminuye el tamaño del descuento */
+  font-size: 2rem;
   font-weight: bold;
   color: #0f1e60;
   margin-bottom: 1.8rem;
@@ -93,7 +93,7 @@
 .slideControls {
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* Reduce el espacio entre los botones de control */
+  gap: 1.5rem;
   margin-top: 1.8rem;
 }
 
@@ -110,4 +110,114 @@
 .slideButton:hover {
   background-color: #0f1e60;
   color: #fff;
+}
+
+/* Media Queries para Tablets */
+@media screen and (max-width: 1024px) {
+  .ofertasTitle {
+    font-size: 2.5rem;
+  }
+
+  .ofertasSubtitle {
+    font-size: 1.8rem;
+    width: 90%;
+  }
+
+  .sliderContainer {
+    width: 85%;
+  }
+
+  .ofertasItems {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ofertaItem {
+    width: 90%;
+    max-width: 600px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ofertaImage {
+    width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  .ofertaText {
+    align-items: center;
+  }
+
+  .ofertaTitle, .ofertaDiscount {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+/* Media Queries para Móviles */
+@media screen and (max-width: 768px) {
+  .ofertasContainer {
+    padding: 1rem;
+  }
+
+  .ofertasTitle {
+    font-size: 2rem;
+  }
+
+  .ofertasSubtitle {
+    font-size: 1.5rem;
+    width: 95%;
+  }
+
+  .sliderContainer {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .ofertaItem {
+    width: 95%;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .ofertaImage {
+    width: 200px;
+  }
+
+  .ofertaTitle, .ofertaDiscount {
+    font-size: 1.5rem;
+  }
+
+  .ofertaButton, .slideButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .slideControls {
+    gap: 1rem;
+  }
+}
+
+/* Media Queries para Pantallas Pequeñas de Móviles */
+@media screen and (max-width: 480px) {
+  .ofertasTitle {
+    font-size: 1.8rem;
+  }
+
+  .ofertasSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .ofertaImage {
+    width: 150px;
+  }
+
+  .ofertaTitle, .ofertaDiscount {
+    font-size: 1.3rem;
+  }
+
+  .ofertaButton, .slideButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
 }

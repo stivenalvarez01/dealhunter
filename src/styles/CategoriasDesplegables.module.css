@@ -1,85 +1,157 @@
 /* Contenedor general del segmento de productos */
 .productSegmentContainer {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Lato', sans-serif; /* Estilo general */
-  }
-  
-  .sectionTitle {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Botones de segmento */
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Lato', sans-serif; /* Estilo general */
+}
+
+.sectionTitle {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Botones de segmento */
+.segmentButtons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  padding-top: 3rem;
+  padding-left: 25%;
+  font-family: 'Lato', sans-serif; /* Estilo general */
+}
+
+.segmentButton {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: #33333398;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Lato', sans-serif; /* Estilo general */
+}
+
+.active {
+  color: #0e0000;
+  font-family: 'Lato', sans-serif; /* Estilo general */
+  text-decoration-line: underline;
+}
+
+/* Lista de productos */
+.productList {
+  display: inline-grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 16px; /* Espacio entre los elementos */
+  padding: 16px; /* Opcional: espacio alrededor de la cuadrícula */
+}
+
+.productCard {
+  background-color: rgba(184, 198, 217, 0.50); /* Estilo de la tarjeta */
+  border-radius: 9px; /* Bordes redondeados */
+  padding: 24px; /* Espaciado interno */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+}
+
+.productImage {
+  height: 150px;
+  background-color: #f0f0f0; /* Para simular la imagen, puedes reemplazar con una imagen real */
+  margin-bottom: 15px;
+}
+
+.productName {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.productPrice {
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Media Queries Responsivas */
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
   .segmentButtons {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-    padding-top: 3rem;
-    padding-left: 25%;
-    font-family: 'Lato', sans-serif; /* Estilo general */
+      padding-left: 10%;
+  }
 
-  }
-  
-  .segmentButton {
-    padding: 10px 20px;
-    border: none;
-    background-color: transparent;
-    color: #33333398;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-    font-family: 'Lato', sans-serif; /* Estilo general */
-
-  }
-  
-  .active {
-    color: #0e0000;
-    font-family: 'Lato', sans-serif; /* Estilo general */
-    text-decoration-line: underline;
-  }
-  
-  /* Lista de productos */
   .productList {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 16px; /* Espacio entre los elementos */
-    padding: 16px; /* Opcional: espacio alrededor de la cuadrícula */
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+      gap: 12px;
   }
-  
+
   .productCard {
-    background-color: rgba(184, 198, 217, 0.50); /* Estilo de la tarjeta */
-    border-radius: 9px; /* Bordes redondeados */
-    padding: 24px; /* Espaciado interno */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+      padding: 18px;
   }
-  
-  
-  .productCard:hover {
-    transform: scale(1.05);
-  }
-  
+
   .productImage {
-    height: 150px;
-    background-color: #f0f0f0; /* Para simular la imagen, puedes reemplazar con una imagen real */
-    margin-bottom: 15px;
+      height: 120px;
   }
-  
+
+  .sectionTitle {
+      font-size: 1.8em;
+  }
+}
+
+/* Móviles (hasta 767px) */
+@media screen and (max-width: 767px) {
+  .segmentButtons {
+      flex-direction: column;
+      align-items: center;
+      padding-left: 0;
+  }
+
+  .segmentButton {
+      margin-bottom: 10px;
+      width: 80%;
+  }
+
+  .productList {
+      grid-template-columns: repeat(1, 1fr); /* 1 columna */
+      gap: 10px;
+  }
+
+  .productCard {
+      padding: 15px;
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .productImage {
+      height: 100px;
+  }
+
+  .sectionTitle {
+      font-size: 1.6em;
+  }
+
   .productName {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 10px;
+      font-size: 1em;
   }
-  
+
   .productPrice {
-    font-size: 1.2em;
-    color: #666;
+      font-size: 1.1em;
   }
+}
+
+/* PC (1025px en adelante) - Ajustes menores */
+@media screen and (min-width: 1025px) {
+  .productCard:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+}
   

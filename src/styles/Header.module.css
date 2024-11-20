@@ -245,6 +245,19 @@ body {
 
 /* Estilos responsivos */
 
+/* Ajuste para pantallas grandes (PC) */
+@media (min-width: 1025px) {
+  .header, .navbar, .optionsBar {
+    padding: 16px 160px;
+  }
+  .navLinks {
+    gap: 52px;
+  }
+  .logo img {
+    width: 233px;
+  }
+}
+
 /* Ajuste para tablets */
 @media (max-width: 1024px) {
   .header, .navbar, .optionsBar {
