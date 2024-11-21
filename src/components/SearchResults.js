@@ -17,23 +17,16 @@ const SearchResults = () => {
 
             try {
                 const response = await fetch(`http://127.0.0.1:5000/api/search?query=${searchTerm}`);
-                
+
                 // Log de la respuesta completa
                 console.log("Respuesta del servidor:", response);
 
                 if (response.ok) {
                     const data = await response.json();
-                    
-                    // Log de los datos recibidos
-                    console.log("Datos de productos:", data);
-                    
-                    // Validación adicional de los datos
-                    if (Array.isArray(data)) {
-                        setProducts(data);
-                    } else {
-                        console.error("Los datos recibidos no son un array:", data);
-                        setProducts([]);
-                    }
+                    setProducts(data);
+
+                    // Guardar en localStorage
+                    localStorage.setItem('searchResults', JSON.stringify(data));
                 } else {
                     // Log del error de respuesta
                     const errorText = await response.text();
@@ -75,16 +68,14 @@ const SearchResults = () => {
                     <div key={product.id || index} className={styles.productItem}>
                         <Link
                             to={`/product/${encodeURIComponent(product.id)}`}
-                            className={styles.productLink}
-                            onClick={() => console.log("Producto seleccionado:", product)}
+                            onClick={() => console.log("ID del producto en Link:", product.id)}
                         >
-                            {/* Añadir manejo de imagen por si acaso */}
-                            <img 
-                                src={product.img || 'placeholder-image-url'} 
-                                alt={product.title} 
+                            <img
+                                src={product.img || 'placeholder-image-url'}
+                                alt={product.title}
                                 onError={(e) => {
-                                    e.target.onerror = null; 
-                                    e.target.src = 'placeholder-image-url'
+                                    e.target.onerror = null;
+                                    e.target.src = 'placeholder-image-url';
                                 }}
                             />
                             <div className={styles.productInfo}>
@@ -92,8 +83,20 @@ const SearchResults = () => {
                                 <p>{product.price}</p>
                             </div>
                         </Link>
+                        {/* Añadir el enlace al producto original */}
+                        {product.link && (
+                            <a
+                                href={product.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.productLink}
+                            >
+                                Ver producto original
+                            </a>
+                        )}
                     </div>
                 ))}
+
             </div>
         </div>
     );

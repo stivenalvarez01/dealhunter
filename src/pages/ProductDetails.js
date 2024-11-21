@@ -2,27 +2,34 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Obtener el ID del producto desde la URL
+  const { id } = useParams();
+  console.log("Params completos:", useParams());
+  console.log("ID raw:", id);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
-      setLoading(true);
-      setError(null);
-
       try {
-        const response = await fetch(`http://localhost:5000/api/product/${id}`);
+        const response = await fetch(`http://localhost:5000/api/product/${id}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+    
         if (!response.ok) {
-          throw new Error('Producto no encontrado');
+          const errorBody = await response.text();
+          console.error('Error body:', errorBody);
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
+    
         const data = await response.json();
         setProduct(data);
       } catch (error) {
+        console.error('Fetch error:', error);
         setError(error.message);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -45,12 +52,7 @@ const ProductDetails = () => {
     <div>
       <h1>{product.title}</h1>
       <img src={product.img} alt={product.title} />
-      <h3>Precios:</h3>
-      <ul>
-        {product.prices.map((price, index) => (
-          <li key={index}>{price.store}: ${price.price}</li>
-        ))}
-      </ul>
+      <p>Precio: {product.price}</p>
       <h3>Características:</h3>
       <ul>
         {product.features.map((feature, index) => (

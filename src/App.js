@@ -26,7 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/search" element={<SearchResults />} /> {/* Ruta de resultados */}
-        <Route path="/product/:productId" element={<ProductDetails />} />      </Routes>
+        <Route path="/product/:id" element={<ProductDetails />} />      </Routes>
       <Footer />
     </Router>
   );

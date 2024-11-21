@@ -1,57 +1,73 @@
-const express = require('express'); // Importa Express
-const cors = require('cors'); // Importa CORS
-const puppeteer = require('puppeteer'); // Importa Puppeteer
+const express = require('express');
+const cors = require('cors');
+const puppeteer = require('puppeteer');
 
-const app = express(); // Crea una instancia de Express
-app.use(cors()); // Habilita CORS
+const app = express();
+app.use(cors());
 
-// Ruta para obtener detalles del producto
-app.get('/api/product/:id', async (req, res) => {
-  const productId = req.params.id;
+const selectorsMap = {
+  title: [
+    '.product-name',
+    '.product-title',
+    'h1.product__item__top__title',
+    'h1'
+  ],
+  image: [
+    '.product-image-container img',
+    '.product-image',
+    '.product__item img',
+    'img.main-image'
+  ],
+  price: [
+    '.price',
+    '.product__price--discounts__price',
+    '.current-price',
+    '[data-price]'
+  ],
+  features: [
+    '.product-description-content li',
+    '.product-features li',
+    '.features li',
+    '.specifications li'
+  ],
+  description: [
+    '.product-description',
+    '.product-details',
+    '.description-content',
+    '.product-info'
+  ]
+};
 
-  const url = `https://www.alkosto.com/p/${productId}`; // URL del producto
+const findElementContent = (document, selectors, type = 'textContent') => {
+  for (const selector of selectors) {
+    const element = document.querySelector(selector);
+    if (element) {
+      return type === 'src' ? element.src : element.textContent.trim();
+    }
+  }
+  return null;
+};
+
+app.get('/api/product', async (req, res) => {
+  const productUrl = req.query.url;
+
+  if (!productUrl) {
+    return res.status(400).json({
+      error: 'URL de producto no proporcionada',
+      details: 'Se requiere una URL válida'
+    });
+  }
 
   try {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-
-    const page = await browser.newPage();
-    await page.setUserAgent(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    );
-
-    await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
-
-    const productData = await page.evaluate(() => {
-      const title = document.querySelector('.product-name, .product-title')?.textContent.trim();
-      const img = document.querySelector('.product-image-container img, .product-image')?.src;
-      const priceElements = document.querySelectorAll('.price');
-      const prices = Array.from(priceElements).map((el) => ({
-        store: 'Alkosto',
-        price: el.textContent.trim()
-      }));
-      const featureElements = document.querySelectorAll('.product-description-content li, .product-features li');
-      const features = Array.from(featureElements).map((el) => el.textContent.trim());
-
-      return { title, img, prices, features };
-    });
-
-    await browser.close();
-
-    if (productData.title && productData.img) {
-      res.json({ id: productId, ...productData });
-    } else {
-      res.status(404).json({ error: 'Producto no encontrado' });
-    }
+    const productDetails = await scrapeProductDetails(productUrl);
+    res.json(productDetails);  // Aquí es donde 'productDetails' se usa
   } catch (error) {
-    console.error('Error al obtener el producto:', error.message);
-    res.status(500).json({ error: 'Error al obtener el producto', details: error.message });
+    res.status(500).json({ error: 'Error al obtener detalles del producto' });
   }
 });
 
-const PORT = process.env.PORT || 5000; // Define el puerto
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
