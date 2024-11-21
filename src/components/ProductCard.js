@@ -6,8 +6,12 @@ const ProductCard = ({ imageSrc, title, price }) => {
     return (
         <div className={styles.card}>
             <div className={styles.cardHeader}>
-                <div className={styles.iconContainer}>
-                    <div className={styles.iconBorder}></div>
+            <div className={styles.iconContainer}>
+                    <img 
+                        className={styles.iconImage} 
+                        src="images/corazon.png" // Ruta a la imagen del corazón
+                        alt="Corazón" 
+                    />
                 </div>
             </div>
             <img className={styles.cardImage} src={imageSrc} alt={title} />

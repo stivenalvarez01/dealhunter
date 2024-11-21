@@ -2,7 +2,7 @@
     width: 268px;
     height: 432px;
     padding: 24px 16px;
-    background: rgba(184, 198, 217, 0.50);
+    background: #ffffff;
     border-radius: 9px;
     flex-direction: column;
     justify-content: flex-start;
@@ -96,3 +96,32 @@
     line-height: 0px;
     word-wrap: break-word;
 }
+
+
+/* ProductCard.module.css */
+
+/* Contenedor principal de la carta */
+.card {
+    position: relative;
+    width: 300px; /* Ajusta el tamaño de la carta según sea necesario */
+    /* Otros estilos... */
+}
+
+/* Contenedor del icono (corazón) */
+.iconContainer {
+    position: absolute;
+    top: 10px;  /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Ajusta la distancia desde la parte derecha */
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px; /* Ajusta el tamaño del icono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen del corazón */
+.iconImage {
+    width: 100%; /* Esto asegura que la imagen ocupe todo el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+/* Otros estilos... */

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from '../styles/Header.module.css';
 
+
+
+
 const Header = () => {
     const currentLocation = useLocation();
     const navigate = useNavigate();
@@ -17,12 +20,18 @@ const Header = () => {
         }
     };
 
+    const handleCategoryClick = (category) => {
+        navigate(`/search?query=${encodeURIComponent(category)}`);
+    };
+
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.navbar}>
                     <div className={styles.logo}>
-                        <img src='images/logo.png' alt="DealHunter Logo" />
+                        <Link to="/">
+                            <img src="images/logo.png" alt="DealHunter Logo" />
+                        </Link>
                     </div>
                     <div className={styles.searchBar}>
                         <input
@@ -72,17 +81,20 @@ const Header = () => {
             <div className={styles.optionsBar}>
                 {['Smartphone', 'Laptops', 'Tablets', 'Componentes', 'Periféricos', 'Otros'].map((option, index) => (
                     <React.Fragment key={option}>
-                        {/* Usamos Link para hacer que cada opción redirija a una página de producto específica */}
-                        <Link 
-                            to= '/Productos' 
-                            className={styles.optionItem}>
+                        {/* Cambio: onClick en vez de Link */}
+                        <div
+                            onClick={() => handleCategoryClick(option)}
+                            className={styles.optionItem}
+                            style={{ cursor: 'pointer' }} // Añade cursor pointer
+                        >
                             <img src='images/phone-icon.png' alt={option} />
                             <div className={styles.optionText}>{option}</div>
-                        </Link>
-                        {index < 5 && <div className={styles.divider}></div>} {/* Agrega divisor solo si no es el último elemento */}
+                        </div>
+                        {index < 5 && <div className={styles.divider}></div>}
                     </React.Fragment>
                 ))}
             </div>
+
         </>
     );
 };

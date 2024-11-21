@@ -38,6 +38,41 @@ const selectorsMap = {
   ]
 };
 
+// Función que realiza el scraping de la categoría
+const scrapeCategory = async (category) => {
+  const url = `https://www.example.com/${category}`; // URL base para la categoría, adapta según el sitio web
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: 'load', timeout: 0 });
+
+  const products = await page.evaluate((selectorsMap) => {
+    const productsList = [];
+
+    // Se asume que hay una lista de productos con una estructura similar
+    const productElements = document.querySelectorAll('.product-item'); // Ajusta el selector según el HTML del sitio
+
+    productElements.forEach((productElement) => {
+      const title = findElementContent(productElement, selectorsMap.title);
+      const image = findElementContent(productElement, selectorsMap.image, 'src');
+      const price = findElementContent(productElement, selectorsMap.price);
+
+      if (title && image && price) {
+        productsList.push({
+          title,
+          image,
+          price
+        });
+      }
+    });
+
+    return productsList;
+  }, selectorsMap);
+
+  await browser.close();
+  return products;
+};
+
+// Función para obtener el contenido de un elemento
 const findElementContent = (document, selectors, type = 'textContent') => {
   for (const selector of selectors) {
     const element = document.querySelector(selector);
@@ -48,25 +83,26 @@ const findElementContent = (document, selectors, type = 'textContent') => {
   return null;
 };
 
-app.get('/api/product', async (req, res) => {
-  const productUrl = req.query.url;
+// Endpoint para hacer scraping de una categoría
+app.get('/api/scrape', async (req, res) => {
+  const category = req.query.category;
 
-  if (!productUrl) {
+  if (!category) {
     return res.status(400).json({
-      error: 'URL de producto no proporcionada',
-      details: 'Se requiere una URL válida'
+      error: 'Categoría no proporcionada',
+      details: 'Se requiere una categoría válida'
     });
   }
 
   try {
-    const productDetails = await scrapeProductDetails(productUrl);
-    res.json(productDetails);  // Aquí es donde 'productDetails' se usa
+    const products = await scrapeCategory(category);
+    res.json(products);  // Devuelve los productos como JSON
   } catch (error) {
-    res.status(500).json({ error: 'Error al obtener detalles del producto' });
+    res.status(500).json({ error: 'Error al obtener productos de la categoría' });
   }
 });
 
-
+// Puerto para el servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
