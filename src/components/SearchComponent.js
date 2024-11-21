@@ -2,11 +2,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-// Crear instancia de axios con URL base
-const api = axios.create({
-  baseURL: 'http://localhost:5000/api'
-});
-
 const SearchComponent = () => {
     const [query, setQuery] = useState("");
     const [products, setProducts] = useState([]);
@@ -27,15 +22,6 @@ const SearchComponent = () => {
         }
     };
 
-  const handleProductClick = async (productId) => {
-    try {
-      const response = await api.get(`/product/${productId}`);
-      console.log(response.data);
-      setProductDetails(response.data);
-    } catch (error) {
-      console.error("Error fetching product details:", error);
-    }
-  };
 
     return (
         <div>
