@@ -1,10 +1,12 @@
 const express = require('express'); // Importa Express
 const cors = require('cors'); // Importa CORS
 const puppeteer = require('puppeteer'); // Importa Puppeteer
+require('dotenv').config(); // Cargar variables de entorno
 
 const app = express(); // Crea una instancia de Express
 app.use(cors()); // Habilita CORS
 
+// Ruta para obtener detalles del producto
 app.get('/api/product/:id', async (req, res) => {
   const productId = req.params.id;
 
@@ -12,8 +14,8 @@ app.get('/api/product/:id', async (req, res) => {
 
   try {
     const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      headless: true, // Ejecutar en modo sin cabeza
+      args: ['--no-sandbox', '--disable-setuid-sandbox'] // Configuración de Puppeteer para Heroku
     });
 
     const page = await browser.newPage();
@@ -53,7 +55,9 @@ app.get('/api/product/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000; // Define el puerto
+// Configurar puerto para Heroku
+const PORT = process.env.PORT || 5000; // Usar el puerto asignado por Heroku o el puerto 5000
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
+
