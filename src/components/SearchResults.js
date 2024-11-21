@@ -18,10 +18,10 @@ const SearchResults = () => {
 
       try {
         let response;
-        if (category) {
-          response = await fetch(`http://127.0.0.1:5000/api/scrape?category=${category}`);
+        if (category) {rail
+          response = await fetch(`backenddealhunter-production.up.railway.app?category=${category}`);
         } else if (searchTerm) {
-          response = await fetch(`http://127.0.0.1:5000/api/search?query=${searchTerm}`);
+          response = await fetch(`backenddealhunter-production.up.railway.app?query=${searchTerm}`);
         }
 
         if (response.ok) {
