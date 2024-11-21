@@ -1,17 +1,5 @@
 # backend/scraper/search_scraper.py
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.edge.options import Options
-import time
 
-def get_product_list(search_term):
-    edge_options = Options()
-    edge_options.add_argument("--headless")
-    service = Service('C:\\Users\\ASUS\\Downloads\\edgedriver_win64\\msedgedriver.exe')
-
-    print("Iniciando EdgeDriver...")
-    driver = we# backend/scraper/search_scraper.py
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service
