@@ -18,7 +18,7 @@ const SearchResults = () => {
 
       try {
         let response;
-        if (category) {rail
+        if (category) {
           response = await fetch(`backend-production-4126.up.railway.app?category=${category}`);
         } else if (searchTerm) {
           response = await fetch(`backend-production-4126.up.railway.app?query=${searchTerm}`);
