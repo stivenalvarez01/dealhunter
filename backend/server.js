@@ -51,7 +51,7 @@ app.get('/api/product/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000; // Define el puerto
+const PORT = process.env.PORT || 8080; // Define el puerto
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
