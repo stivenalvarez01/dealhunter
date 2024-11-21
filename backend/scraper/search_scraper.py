@@ -35,16 +35,21 @@ def get_product_list(search_term):
                 except Exception:
                     price = "Precio no disponible"
 
-                link = item.find_element(By.CLASS_NAME, "js-view-details").get_attribute("href")
+                # Obtener el enlace y generar ID
+                link_element = item.find_element(By.CLASS_NAME, "js-view-details")
+                link = link_element.get_attribute("href")
+                product_id = link.split('/')[-1]  # Generar ID a partir del último segmento del enlace
+                
                 img = item.find_element(By.TAG_NAME, "img").get_attribute("src")
 
                 products.append({
+                    "id": product_id,  # Añadir ID generado
                     "title": title,
                     "price": price,
                     "link": link,
                     "img": img
                 })
-                print(f"Producto encontrado: {title}, Precio: {price}")
+                print(f"Producto encontrado: {title}, ID: {product_id}")
             except Exception as e:
                 print("Error al extraer producto:", e)
     
@@ -52,12 +57,3 @@ def get_product_list(search_term):
         driver.quit()
     
     return products
-
-if __name__ == "__main__":
-    search_term = "celular xiaomi"
-    productos = get_product_list(search_term)
-    if productos:
-        for producto in productos:
-            print(producto)
-    else:
-        print("No se encontraron productos.")
