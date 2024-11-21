@@ -10,7 +10,7 @@ const SearchComponent = () => {
     const handleSearch = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://127.0.0.1:5000/api/search`, {
+            const response = await axios.get(`backend-production-4126.up.railway.app/api/search`, {
                 params: { query }
             });
             console.log(response.data);  // Verificar si los datos se reciben en el frontend
